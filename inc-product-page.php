@@ -146,7 +146,7 @@ function highend_render_product_page( $key ) {
 			<div>
 				<div style="font-size:11.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#C9973E"><?php echo esc_html( $p['eyebrow'] ); ?></div>
 				<h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.6vw,2.5rem);line-height:1.15;margin-top:12px;max-width:36ch"><?php echo esc_html( $p['title'] ); ?></h1>
-				<p style="margin-top:16px;font-size:16px;line-height:1.7;color:#625E57;max-width:66ch"><?php echo esc_html( $p['intro'] ); ?></p>
+				<p style="margin-top:16px;font-size:17px;line-height:1.7;color:#151515;max-width:66ch"><?php echo esc_html( $p['intro'] ); ?></p>
 				<div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:28px">
 					<a class="btn btn--primary" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">Book Free Consultation <?php highend_arrow(); ?></a>
 					<a class="btn btn--outline" href="tel:<?php echo esc_attr( preg_replace( '/[^0-9]/', '', HIGHEND_PHONE ) ); ?>">Call <?php echo esc_html( HIGHEND_PHONE ); ?></a>
@@ -160,7 +160,7 @@ function highend_render_product_page( $key ) {
 			<?php foreach ( $p['features'] as $f ) : ?>
 				<div style="background:#fff;border:1px solid #E8DFD0;border-radius:16px;padding:22px">
 					<h2 style="font-size:18px;font-weight:700;color:#151515;margin:0"><?php echo esc_html( $f[0] ); ?></h2>
-					<p style="margin-top:10px;font-size:14.5px;line-height:1.65;color:#625E57"><?php echo esc_html( $f[1] ); ?></p>
+					<p style="margin-top:10px;font-size:15.5px;line-height:1.65;color:#151515"><?php echo esc_html( $f[1] ); ?></p>
 				</div>
 			<?php endforeach; ?>
 		</div>
@@ -172,7 +172,7 @@ function highend_render_product_page( $key ) {
 				<?php foreach ( $p['faqs'] as $f ) : ?>
 					<details class="hb-faq-item" style="background:#FAF8F3;border:1px solid #E8DFD0;border-radius:14px;padding:18px 20px">
 						<summary style="cursor:pointer;list-style:none;font-weight:700;font-size:15px;color:#151515;display:flex;align-items:center;justify-content:space-between;gap:16px"><span><?php echo esc_html( $f[0] ); ?></span><svg class="hb-faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
-						<p style="margin-top:10px;font-size:14px;line-height:1.65;color:#625E57"><?php echo esc_html( $f[1] ); ?></p>
+						<p style="margin-top:10px;font-size:15px;line-height:1.65;color:#151515"><?php echo esc_html( $f[1] ); ?></p>
 					</details>
 				<?php endforeach; ?>
 			</div>
