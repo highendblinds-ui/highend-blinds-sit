@@ -20,6 +20,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
+          log-level: verbose
           local-dir: ./
           server-dir: public_html/wp-content/themes/highend-blinds-wp/
           exclude: |
