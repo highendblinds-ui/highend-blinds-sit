@@ -90,8 +90,8 @@
 .hb-gallery-modal.open{display:flex}
 .hb-gallery-modal img{width:100vw;height:88vh;object-fit:contain;border-radius:0}
 .hb-gm-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--ink,#151515);font-size:38px;line-height:1;cursor:pointer;padding:6px}
-.hb-gm-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.08);border:none;color:var(--ink,#151515);font-size:22px;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.hb-gm-arrow:hover{background:rgba(0,0,0,.15)}
+.hb-gm-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:none;color:var(--ink,#151515);font-size:22px;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.hb-gm-arrow:hover{background:#fff}
 .hb-gm-prev{left:16px}
 .hb-gm-next{right:16px}
 .hb-gm-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:var(--muted,#625E57);font-size:14px;opacity:.9}
@@ -142,6 +142,22 @@ document.addEventListener('keydown', function(e){
 	if(e.key === 'ArrowLeft') hbGalleryNav(-1);
 	if(e.key === 'ArrowRight') hbGalleryNav(1);
 });
+(function(){
+	const modal = document.getElementById('hb-gallery-modal');
+	if(!modal) return;
+	let touchStartX = 0, touchStartY = 0;
+	modal.addEventListener('touchstart', function(e){
+		touchStartX = e.changedTouches[0].clientX;
+		touchStartY = e.changedTouches[0].clientY;
+	}, { passive: true });
+	modal.addEventListener('touchend', function(e){
+		const dx = e.changedTouches[0].clientX - touchStartX;
+		const dy = e.changedTouches[0].clientY - touchStartY;
+		if(Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){
+			hbGalleryNav(dx < 0 ? 1 : -1);
+		}
+	}, { passive: true });
+})();
 </script>
 <?php endif; ?>
 
