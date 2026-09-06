@@ -76,7 +76,7 @@ $reviews = array(
 					);
 					foreach ( $hero_slides as $slide ) : ?>
 						<div class="hb-slide">
-							<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . $slide[0] ); ?>" alt="<?php echo esc_attr( $slide[1] ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block">
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . $slide[0] ); ?>" alt="<?php echo esc_attr( $slide[1] ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
 							<div class="hb-slide-caption"><strong><?php echo esc_html( $slide[1] ); ?></strong><span><?php echo esc_html( $slide[2] ); ?></span></div>
 						</div>
 					<?php endforeach; ?>
