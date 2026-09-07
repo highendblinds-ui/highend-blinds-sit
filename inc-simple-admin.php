@@ -48,29 +48,51 @@ function highend_simple_admin_intercept() {
 		if ( isset( $_POST['highend_gallery_submit'] ) ) {
 			if ( ! isset( $_POST['highend_gallery_nonce'] ) || ! wp_verify_nonce( $_POST['highend_gallery_nonce'], 'highend_gallery_upload' ) ) {
 				$error = 'Your session expired. Please try again.';
-			} elseif ( empty( $_FILES['highend_gallery_file']['name'] ) ) {
-				$error = 'Please choose a photo to upload.';
+			} elseif ( empty( $_FILES['highend_gallery_file']['name'][0] ) ) {
+				$error = 'Please choose at least one photo to upload.';
 			} else {
 				require_once ABSPATH . 'wp-admin/includes/file.php';
 				$overrides = array( 'test_form' => false, 'mimes' => array( 'jpg|jpeg' => 'image/jpeg' ) );
-				$moved     = wp_handle_upload( $_FILES['highend_gallery_file'], $overrides );
-				if ( isset( $moved['error'] ) ) {
-					$error = 'Upload failed: ' . $moved['error'];
-				} else {
-					$dir      = get_template_directory() . '/assets/images/';
-					$existing = glob( $dir . 'gallery-*.jpg' );
-					$max      = 0;
-					foreach ( (array) $existing as $file ) {
-						if ( preg_match( '/gallery-(\d+)\.jpg$/i', $file, $m ) ) {
-							$max = max( $max, (int) $m[1] );
-						}
+				$dir       = get_template_directory() . '/assets/images/';
+				$existing  = glob( $dir . 'gallery-*.jpg' );
+				$max       = 0;
+				foreach ( (array) $existing as $file ) {
+					if ( preg_match( '/gallery-(\d+)\.jpg$/i', $file, $m ) ) {
+						$max = max( $max, (int) $m[1] );
 					}
-					$next_name = 'gallery-' . ( $max + 1 ) . '.jpg';
+				}
+				$added  = array();
+				$failed = array();
+				$count  = count( $_FILES['highend_gallery_file']['name'] );
+				for ( $i = 0; $i < $count; $i++ ) {
+					if ( empty( $_FILES['highend_gallery_file']['name'][ $i ] ) ) {
+						continue;
+					}
+					$single = array(
+						'name'     => $_FILES['highend_gallery_file']['name'][ $i ],
+						'type'     => $_FILES['highend_gallery_file']['type'][ $i ],
+						'tmp_name' => $_FILES['highend_gallery_file']['tmp_name'][ $i ],
+						'error'    => $_FILES['highend_gallery_file']['error'][ $i ],
+						'size'     => $_FILES['highend_gallery_file']['size'][ $i ],
+					);
+					$moved  = wp_handle_upload( $single, $overrides );
+					if ( isset( $moved['error'] ) ) {
+						$failed[] = $single['name'] . ' (' . $moved['error'] . ')';
+						continue;
+					}
+					$max++;
+					$next_name = 'gallery-' . $max . '.jpg';
 					if ( @copy( $moved['file'], $dir . $next_name ) ) {
-						$notice = 'Photo added to the gallery as ' . esc_html( $next_name ) . '.';
+						$added[] = $next_name;
 					} else {
-						$error = 'Photo uploaded, but could not be copied into the gallery folder. Please check folder permissions.';
+						$failed[] = $single['name'] . ' (could not copy into gallery folder)';
 					}
+				}
+				if ( $added ) {
+					$notice = count( $added ) . ' photo(s) added to the gallery: ' . esc_html( implode( ', ', $added ) ) . '.';
+				}
+				if ( $failed ) {
+					$error = 'Some uploads failed: ' . esc_html( implode( ', ', $failed ) ) . '.';
 				}
 			}
 		}
@@ -164,10 +186,10 @@ function highend_render_simple_admin( $notice = '', $error = '' ) {
 			<p class="hb-logout"><a href="<?php echo esc_url( home_url( '/admin/?logout=1' ) ); ?>">Log out</a></p>
 
 			<div class="hb-card">
-				<h2>Add Gallery Photo</h2>
+				<h2>Add Gallery Photos</h2>
 				<form method="post" enctype="multipart/form-data">
-					<label for="highend_gallery_file">Photo (JPG)</label>
-					<input type="file" id="highend_gallery_file" name="highend_gallery_file" accept="image/jpeg" required>
+					<label for="highend_gallery_file">Photos (JPG — select multiple at once)</label>
+					<input type="file" id="highend_gallery_file" name="highend_gallery_file[]" accept="image/jpeg" multiple required>
 					<?php wp_nonce_field( 'highend_gallery_upload', 'highend_gallery_nonce' ); ?>
 					<button type="submit" name="highend_gallery_submit" value="1">Upload to Gallery</button>
 				</form>
