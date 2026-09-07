@@ -62,6 +62,7 @@ function highend_simple_admin_intercept() {
 	if ( ! defined( 'DONOTCACHEPAGE' ) ) {
 		define( 'DONOTCACHEPAGE', true );
 	}
+	status_header( 200 );
 	nocache_headers();
 	$notice = '';
 	$error  = '';

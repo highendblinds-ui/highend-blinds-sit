@@ -36,6 +36,7 @@ function highend_seo_data() {
 		'fort-saskatchewan'  => array( 'Custom Blinds Fort Saskatchewan | HighEnd Blinds', 'Custom blinds Fort Saskatchewan homeowners trust — residential and commercial, with local manufacturing, free measurement, and professional installation.' ),
 		'blog'               => array( 'Blinds & Window Covering Blog | Edmonton', 'Helpful Edmonton guides about zebra blinds, roller blinds, motorized shades, curtains, installation, light control, and home automation.' ),
 		'warranty'           => array( 'Blinds Warranty | HighEnd Blinds Edmonton', 'Review warranty coverage for blinds, components, motors, installation, curtains, and drapery supplied by HighEnd Blinds Inc. in Edmonton.' ),
+		'measurement-guide'  => array( 'Window Measurement Guide | HighEnd Blinds Edmonton', 'Learn how inside-mount and outside-mount measurements work for custom blinds and curtains, plus why HighEnd Blinds still measures every window for free in Edmonton.' ),
 		'terms'              => array( 'Terms of Service | HighEnd Blinds Edmonton', 'Read the terms of service for HighEnd Blinds Inc., covering custom blinds, curtains, and motorized window coverings sold and installed in Edmonton.' ),
 	);
 }

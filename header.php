@@ -76,6 +76,7 @@ function highend_default_nav() {
 	echo '<a href="' . esc_url( $home . '#reviews' ) . '">Reviews</a>';
 	echo '<a href="' . esc_url( get_permalink( get_option( 'page_for_posts' ) ) ? get_permalink( get_option( 'page_for_posts' ) ) : $home . '#blog' ) . '">Blog</a>';
 	echo '<a href="' . esc_url( home_url( '/about-us/' ) ) . '">About</a>';
+	echo '<a href="' . esc_url( home_url( '/measurement-guide/' ) ) . '">Measurement Guide</a>';
 	echo '<a href="' . esc_url( home_url( '/contact-us/' ) ) . '">Contact</a>';
 	echo '</nav>';
 }
