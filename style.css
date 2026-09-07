@@ -297,6 +297,7 @@ input,select,textarea{font-family:var(--font-body)}
   .hb-wrap{padding:0 20px}
   .hb-topbar .hb-wrap{flex-wrap:nowrap;padding-left:10px;padding-right:10px;gap:6px}
   .hb-topbar .hb-tb-item{gap:3px;white-space:nowrap;font-size:10.5px!important;line-height:1.2!important;font-weight:700}
+  .hb-topbar .hb-rating{font-size:12.5px!important}
   .hb-topbar .hb-social{gap:8px;white-space:nowrap}
   .hb-topbar .hb-social a[href^="tel:"]{font-size:16px!important;line-height:1.2!important}
   .hb-form .row{grid-template-columns:1fr}
