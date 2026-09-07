@@ -5,6 +5,53 @@
  * needing the full wp-admin dashboard.
  */
 
+/** Turns basic markdown (headings, **bold**, - bullets, [links](url)) typed into
+ *  the plain content box into real HTML, so published posts get properly sized
+ *  headings instead of literal # and ** characters. */
+function highend_simple_markdown_inline( $text ) {
+	$text = preg_replace( '/\[([^\]]+)\]\(([^)]+)\)/', '<a href="$2">$1</a>', $text );
+	$text = preg_replace( '/\*\*(.+?)\*\*/', '<strong>$1</strong>', $text );
+	return $text;
+}
+
+function highend_simple_markdown( $text ) {
+	$lines   = explode( "\n", str_replace( "\r\n", "\n", (string) $text ) );
+	$html    = array();
+	$in_list = false;
+	foreach ( $lines as $line ) {
+		$trimmed = trim( $line );
+		if ( '' === $trimmed ) {
+			if ( $in_list ) {
+				$html[]  = '</ul>';
+				$in_list = false;
+			}
+			continue;
+		}
+		if ( preg_match( '/^-\s+(.*)/', $trimmed, $m ) ) {
+			if ( ! $in_list ) {
+				$html[]  = '<ul>';
+				$in_list = true;
+			}
+			$html[] = '<li>' . highend_simple_markdown_inline( $m[1] ) . '</li>';
+			continue;
+		}
+		if ( $in_list ) {
+			$html[]  = '</ul>';
+			$in_list = false;
+		}
+		if ( preg_match( '/^###\s+(.*)/', $trimmed, $m ) ) {
+			$html[] = '<h3>' . highend_simple_markdown_inline( $m[1] ) . '</h3>';
+		} elseif ( preg_match( '/^#{1,2}\s+(.*)/', $trimmed, $m ) ) {
+			$html[] = '<h2>' . highend_simple_markdown_inline( $m[1] ) . '</h2>';
+		} else {
+			$html[] = '<p>' . highend_simple_markdown_inline( $trimmed ) . '</p>';
+		}
+	}
+	if ( $in_list ) {
+		$html[] = '</ul>';
+	}
+	return implode( "\n", $html );
+}
 
 function highend_simple_admin_intercept() {
 	$path = trim( (string) wp_parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ), '/' );
@@ -97,7 +144,7 @@ function highend_simple_admin_intercept() {
 				$error = 'Your session expired. Please try again.';
 			} else {
 				$title   = sanitize_text_field( $_POST['highend_post_title'] ?? '' );
-				$content = wp_kses_post( wpautop( (string) ( $_POST['highend_post_content'] ?? '' ) ) );
+				$content = wp_kses_post( highend_simple_markdown( $_POST['highend_post_content'] ?? '' ) );
 				if ( '' === trim( $title ) || '' === trim( $content ) ) {
 					$error = 'Please fill in both a title and content for the post.';
 				} else {
@@ -195,7 +242,7 @@ function highend_render_simple_admin( $notice = '', $error = '' ) {
 				<form method="post" enctype="multipart/form-data">
 					<label for="highend_post_title">Title</label>
 					<input type="text" id="highend_post_title" name="highend_post_title" required>
-					<label for="highend_post_content">Content</label>
+					<label for="highend_post_content">Content (## Heading, **bold**, - bullet, [link](url) are all supported)</label>
 					<textarea id="highend_post_content" name="highend_post_content" required></textarea>
 					<label for="highend_post_image">Featured Image (optional)</label>
 					<input type="file" id="highend_post_image" name="highend_post_image" accept="image/*">
