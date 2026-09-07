@@ -54,6 +54,9 @@ function highend_product_data() {
 				array( 'What child-safe operating options are available for roller blinds?', 'We offer wand operation, a safety guard that keeps the chain secured, and motorized roller blinds with no hanging control chain. The correct option depends on the blind size, window location, and how your family will use the room.' ),
 				array( 'Do you install roller blinds outside Edmonton?', 'Yes — beyond Edmonton, we measure and install roller blinds across Sherwood Park, St. Albert, Spruce Grove, Leduc, Beaumont, Fort Saskatchewan, and surrounding Edmonton-area communities.' ),
 				array( 'Do you offer a warranty on roller blinds in Edmonton?', 'Yes — every roller blinds installation from our Edmonton factory is backed by a warranty on fabric and mechanism, with local Edmonton service if anything ever needs adjustment.' ),
+				array( 'Do you offer blackout blinds in Edmonton?', 'Yes — our blackout blinds use a fully opaque roller fabric that blocks nearly all incoming light, custom made in our Edmonton factory for bedrooms, nurseries, media rooms, and shift workers. Add side channels for a near-total light seal.' ),
+				array( 'What window covering is best for Edmonton homes?', "It depends on the room. Roller blinds are one of the most versatile window coverings we make — a single clean fabric panel that works as blackout, light-filtering, or sunscreen, and layers well under drapery. We'll help you choose the right window covering for each room during your free consultation." ),
+				array( 'Do you install other types of window coverings besides roller blinds?', 'Yes — beyond roller blinds, we manufacture and install zebra blinds, motorized blinds, and Dream Curtains, so every window covering in your Edmonton home can be measured, made, and installed by the same local team.' ),
 			),
 		),
 		'curtains' => array(
