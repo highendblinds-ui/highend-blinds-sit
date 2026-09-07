@@ -71,6 +71,7 @@ function highend_default_nav() {
 	echo '<a href="' . esc_url( home_url( '/motorized-blinds/' ) ) . '">Motorized <span style="color:var(--brand-red)">Blinds</span></a>';
 	echo '<a href="' . esc_url( home_url( '/motorized-curtains/' ) ) . '">Motorized <span style="color:var(--brand-red)">Curtains</span></a>';
 	echo '</div></details>';
+	echo '<a href="' . esc_url( home_url( '/service-areas/' ) ) . '">Service Areas</a>';
 	echo '<a href="' . esc_url( $home . '#gallery' ) . '">Gallery</a>';
 	echo '<a href="' . esc_url( $home . '#reviews' ) . '">Reviews</a>';
 	echo '<a href="' . esc_url( get_permalink( get_option( 'page_for_posts' ) ) ? get_permalink( get_option( 'page_for_posts' ) ) : $home . '#blog' ) . '">Blog</a>';
