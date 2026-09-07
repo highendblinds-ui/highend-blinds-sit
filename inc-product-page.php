@@ -115,7 +115,7 @@ function highend_product_data() {
 		),
 		'motorized-curtains' => array(
 			'eyebrow' => 'Motorized Curtains Edmonton',
-			'title' => 'Motorized Dream Curtains Edmonton — Light Filtering & Privacy',
+			'title' => 'Motorized Curtains Edmonton — Dream Curtains for Light Filtering & Privacy',
 			'intro' => 'Our motorized Dream Curtains are light filtering with privacy — not blackout. Available with a 110V hardwired or rechargeable battery motor, they are ideal for open-to-above family rooms in new homes, deck and patio doors, and normal-height family rooms.',
 			'img' => 'motorized-curtains.jpg',
 			'features' => array(
