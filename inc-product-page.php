@@ -58,7 +58,7 @@ function highend_product_data() {
 		),
 		'curtains' => array(
 			'eyebrow' => 'Dream Curtains Edmonton',
-			'title' => 'Dream Curtains Edmonton — Light Filtering & Privacy',
+			'title' => 'Long Curtains Edmonton — Light Filtering & Privacy',
 			'intro' => 'Our motorized Dream Curtains are light filtering with privacy — not blackout. They are custom measured, fabricated, and installed by our Edmonton team for open-to-above family rooms, deck and patio doors, and normal-height family-room windows.',
 			'img' => 'dream-curtain.jpg',
 			'features' => array(
@@ -66,12 +66,14 @@ function highend_product_data() {
 				array( 'Light filtering with privacy', 'Dream Curtains softly filter daylight and provide privacy by tilting the fabric vanes. They are not a blackout product, making them ideal when you want a bright, comfortable room rather than a darkened one.' ),
 				array( 'Made for the rooms you use most', 'A beautiful choice for open-to-above family rooms in new homes, deck and patio doors, and family rooms with standard ceiling heights. The walk-through vanes keep busy doorways practical.' ),
 				array( 'Quiet motorized operation', 'Every dream curtain runs on a quiet motorized track with a rechargeable motor — no rewiring, no cords. Control from a remote, wall switch, phone app, schedule, or voice assistant.' ),
+				array( 'Long, floor-to-ceiling coverage', 'Dream Curtains are built as long curtains that run floor to ceiling, giving tall Edmonton windows, great rooms, and patio doors full-height coverage with no seams or gaps.' ),
 				array( 'Measured, made, and installed here', 'We measure your ceiling height, track position, and stack space, fabricate to those exact numbers in our Parsons Road facility, then install and program it on site.' ),
 			),
 			'faqs' => array(
 				array( 'What is a dream curtain?', 'A motorized dream curtain made of independent fabric vanes instead of one solid panel. Edmonton homeowners often choose dream curtains because you can walk through them even while closed, slide the whole run open or closed at a button, and tilt the vanes to control light and privacy.' ),
 				array( 'Are Dream Curtains blackout?', 'No. Our motorized Dream Curtains are light filtering with privacy, not blackout. They soften daylight and let you control visibility while keeping the room bright.' ),
 				array( 'Are dream curtains good for sliding patio doors?', 'Yes — dream curtains are the best option we make for Edmonton patio doors. The vanes let you walk through without pulling the curtain aside, and motorization means no cord in the doorway.' ),
+				array( 'Are Dream Curtains a good alternative to vertical blinds?', 'Yes — many Edmonton homeowners replace vertical blinds with Dream Curtains on their patio or sliding doors. You keep the same walk-through practicality vertical blinds offer, but gain a softer fabric look, quieter gliding operation, and remote or app control instead of a pull wand.' ),
 				array( 'Do I need wiring for a motorized dream curtain?', 'No. Our Edmonton dream curtains use rechargeable motors, so nothing needs to be wired. A charge lasts several months to about a year depending on how often the curtain runs.' ),
 				array( 'Will dream curtains work with Alexa or Google Home?', 'Yes — with a hub, your Edmonton dream curtains appear as smart devices for voice control, room groups, and sunrise or sunset schedules.' ),
 				array( 'How much do dream curtains cost in Edmonton?', 'Dream curtain pricing in Edmonton depends on track length, fabric, and motorization. Because we manufacture dream curtains locally, our factory-direct pricing is typically well below imported alternatives.' ),
@@ -80,6 +82,11 @@ function highend_product_data() {
 				array( 'Are dream curtains child and pet safe?', 'Yes — Edmonton dream curtains run cordless and fully motorized, removing loose cords entirely for families and pet owners.' ),
 				array( 'Do you install dream curtains outside Edmonton?', 'Yes — beyond Edmonton, we measure and install dream curtains across Sherwood Park, St. Albert, Spruce Grove, Leduc, Beaumont, Fort Saskatchewan, and surrounding Edmonton-area communities.' ),
 				array( 'Do you offer a warranty on dream curtains in Edmonton?', 'Yes — every dream curtain installation from our Edmonton factory is backed by a warranty on fabric, track, and motor, with local Edmonton service if anything ever needs adjustment.' ),
+				array( 'What are long curtains?', 'Long curtains run the full height of a window or door, from floor to ceiling, rather than stopping partway down. Our motorized Dream Curtains are built as long curtains, giving tall Edmonton windows, patio doors, and great rooms complete, seamless coverage.' ),
+				array( 'How long can curtains be made for tall Edmonton windows?', 'We measure and fabricate to your exact ceiling height, so long curtains for two-storey great rooms, vaulted stairwells, and oversized patio doors are made to fit — not cut down from a standard length.' ),
+				array( 'Are long curtains hard to open and close?', 'Not with ours. Long, floor-to-ceiling curtains can be heavy to pull by hand, which is why every long curtain we install runs on a quiet motorized track — open or close the full length at the touch of a button, remote, or app.' ),
+				array( 'Do long curtains work for two-storey great rooms?', "Yes — long curtains are one of our most requested solutions for Edmonton's two-storey great rooms and open-to-above windows, giving full-height coverage that a standard-length curtain or blind can't reach." ),
+				array( 'How much do long curtains cost in Edmonton?', 'Pricing for long curtains depends on the height and width of the track, fabric choice, and motorization. Because we measure, fabricate, and install locally in Edmonton, our factory-direct pricing is typically well below imported long-curtain alternatives.' ),
 			),
 		),
 		'motorized-blinds' => array(
@@ -117,10 +124,12 @@ function highend_product_data() {
 				array( 'Light filtering with privacy', 'Independent fabric vanes let you walk through even while closed, while the tilt provides light filtering and privacy without losing daylight. Dream Curtains are not a blackout product.' ),
 				array( 'Designed for family rooms and patio doors', 'Choose motorized Dream Curtains for open-to-above family rooms in new homes, deck and patio doors, and normal-height family-room windows where soft daylight and privacy matter.' ),
 				array( 'Remote, app, and voice control', 'Both 110V and battery motorized curtains support a handheld remote, wall switch, and app, plus sunrise and sunset schedules.' ),
+				array( 'Long curtains, floor to ceiling', 'Every motorized Dream Curtain is built as a long, floor-to-ceiling curtain, giving Edmonton great rooms, two-storey windows, and patio doors seamless full-height coverage.' ),
 			),
 			'faqs' => array(
 				array( 'What is the difference between 110V and battery motorized curtains?', 'A 110V motorized curtain wires into household power and never needs charging — best planned during an Edmonton build or renovation. A battery motorized curtain needs no wiring at all and can be added to almost any existing home, with a recharge every few months.' ),
 				array( 'Are motorized curtains the same as dream curtains?', "Yes — every motorized curtain we build in Edmonton is a motorized dream curtain, using independent fabric vanes rather than one solid panel, so you can walk through it even while it's closed." ),
+				array( 'Are motorized Dream Curtains a good alternative to vertical blinds?', 'Yes — motorized Dream Curtains are a popular upgrade from vertical blinds for Edmonton patio and sliding doors. You keep the walk-through convenience vertical blinds offer, but gain a softer fabric look, quieter glide, and app, remote, or voice control.' ),
 				array( 'Are motorized Dream Curtains blackout?', 'No. Our motorized Dream Curtains are light filtering with privacy, rather than blackout. They are designed for softened daylight, privacy, and easy control in family rooms and patio-door areas.' ),
 				array( 'Which motor should I choose for my Edmonton home?', "If you're building or renovating and can run power to the track, 110V is maintenance-free forever. If you're upgrading an existing home without new wiring, a rechargeable battery motor installs just as cleanly with zero electrical work." ),
 				array( 'How much do motorized curtains cost in Edmonton?', 'Pricing depends on track length, fabric, and 110V vs. battery motor choice. Because we fabricate motorized curtains locally, our factory-direct pricing is typically well below imported alternatives.' ),
