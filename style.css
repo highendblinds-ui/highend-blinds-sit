@@ -51,6 +51,8 @@ input,select,textarea{font-family:var(--font-body)}
 .hb-topbar .hb-social{display:flex;align-items:center;gap:16px}
 .hb-topbar .hb-social a{color:var(--muted);display:flex}
 .hb-topbar .hb-social a:hover{color:var(--primary)}
+.hb-topbar .hb-rating{font-size:14.5px}
+.hb-topbar .hb-social a.hb-tb-phone{color:var(--ink)}
 
 /* header */
 .hb-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
