@@ -4,7 +4,7 @@ get_header();
 ?>
 <section style="background:#151515;color:#fff">
 	<div class="hb-wrap" style="padding:60px 20px">
-		<div style="font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#C9973E">Customer Care</div>
+		<div style="font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#C9973E">How to Measure</div>
 		<h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:12px 0 0">Window Measurement Guide</h1>
 		<p style="margin-top:16px;color:#C9CDD2;line-height:1.7;max-width:62ch">Measuring instructions by mount — inside mount and outside mount — plus why our free in-home measurement still matters.</p>
 	</div>
