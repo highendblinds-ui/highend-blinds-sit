@@ -6,37 +6,38 @@ get_header();
 	<div class="hb-wrap" style="padding:60px 20px">
 		<div style="font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#C9973E">Customer Care</div>
 		<h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:12px 0 0">Window Measurement Guide</h1>
-		<p style="margin-top:16px;color:#C9CDD2;line-height:1.7;max-width:62ch">How inside-mount and outside-mount measurements work for custom blinds and curtains — plus why our free in-home measurement still matters.</p>
+		<p style="margin-top:16px;color:#C9CDD2;line-height:1.7;max-width:62ch">Measuring instructions by mount — inside mount and outside mount — plus why our free in-home measurement still matters.</p>
 	</div>
 </section>
 
 <section style="background:#F7F3EC">
 	<div class="hb-wrap" style="padding:54px 20px 70px;max-width:980px">
 		<div style="background:#fff;border:1px solid #E8DFD0;border-radius:20px;padding:clamp(24px,4vw,42px);box-shadow:0 16px 45px rgba(40,31,20,.07)">
-			<p style="font-size:16px;line-height:1.75;color:#3a352d;margin:0 0 28px">Every custom blind or curtain is built to the exact size of your window, so accurate measurement matters. This guide explains how the two main mounting styles are measured. We still recommend a free in-home measurement before ordering — a stud finder, tape measure error, or an out-of-square frame can easily throw off a DIY number by enough to matter.</p>
+			<p style="font-size:16px;line-height:1.75;color:#3a352d;margin:0 0 28px">Every custom blind or curtain is built to the exact size of your window, so accurate measurement matters. Below are our measuring instructions by mount type. We still recommend a free in-home measurement before ordering — our team takes all required manufacturing allowances for you.</p>
 
-			<h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;margin:0 0 16px">What you'll need</h2>
-			<ul style="display:grid;gap:12px;margin:0 0 36px;padding-left:22px;line-height:1.65;color:#3a352d">
-				<li>A steel tape measure (fabric tape measures stretch and lose accuracy).</li>
-				<li>A pencil and paper, or your phone's notes app.</li>
-				<li>A step stool for taller windows.</li>
-			</ul>
+			<div style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;margin-bottom:36px">
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/measurement-inside-mount.gif' ); ?>" alt="Inside mount window measurement diagram showing width and height measurement points" style="width:150px;height:auto;flex-shrink:0">
+				<div>
+					<h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;margin:0 0 16px">Inside mount</h2>
+					<ul style="display:grid;gap:12px;margin:0;padding-left:22px;line-height:1.65;color:#3a352d">
+						<li>Measure the width inside the window opening at the top, middle, and bottom. Take the narrowest of the three measurements, and round down to the nearest 1/8″.</li>
+						<li>Measure the height inside the window opening at the left, centre, and right, from the top of the opening to the sill. Take the longest of the three measurements. To keep the blind from resting on the sill, deduct 1/4″ from the height. If there's no sill, measure to the point you'd like the blind to reach.</li>
+						<li>Measure the window on the diagonal. If the two diagonal measurements differ significantly, an outside mount may give better light control and privacy instead.</li>
+						<li>Don't take any allowances on the height or width yourself — our factory takes all required allowances for mounting and operating clearance.</li>
+					</ul>
+				</div>
+			</div>
 
-			<h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;margin:0 0 16px">Inside mount</h2>
-			<p style="margin:0 0 16px;color:#3a352d;line-height:1.7">An inside mount fits within the window frame itself, giving a clean, built-in look.</p>
-			<ul style="display:grid;gap:12px;margin:0 0 36px;padding-left:22px;line-height:1.65;color:#3a352d">
-				<li><strong>Width:</strong> measure the inside of the frame at the top, middle, and bottom. Frames are rarely perfectly square — use the narrowest of the three measurements.</li>
-				<li><strong>Height:</strong> measure the inside of the frame on the left, centre, and right. Use the longest of the three measurements.</li>
-				<li><strong>Depth:</strong> check the frame has enough depth for the mounting brackets and, if motorized, the motor housing.</li>
-			</ul>
-
-			<h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;margin:0 0 16px">Outside mount</h2>
-			<p style="margin:0 0 16px;color:#3a352d;line-height:1.7">An outside mount attaches to the wall or trim above the window, covering the full opening — a good option when a frame is too shallow for an inside mount, or when you want fuller light and privacy coverage.</p>
-			<ul style="display:grid;gap:12px;margin:0 0 36px;padding-left:22px;line-height:1.65;color:#3a352d">
-				<li><strong>Width:</strong> measure the full width you want covered, typically extending 3–4 inches beyond the frame on each side for better light blockage and privacy.</li>
-				<li><strong>Height:</strong> measure from where the top of the hardware will sit down to where you want the covering to end.</li>
-				<li><strong>Mounting surface:</strong> confirm the wall or trim above the window can support the bracket hardware.</li>
-			</ul>
+			<div style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;margin-bottom:36px">
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/measurement-outside-mount.gif' ); ?>" alt="Outside mount window measurement diagram showing width and height measurement points" style="width:150px;height:auto;flex-shrink:0">
+				<div>
+					<h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;margin:0 0 16px">Outside mount</h2>
+					<ul style="display:grid;gap:12px;margin:0;padding-left:22px;line-height:1.65;color:#3a352d">
+						<li>Measure the full width you'd like covered. To minimize light leakage, the blind should overlap the window opening by at least 1-1/2″ on each side (3″ total across the width).</li>
+						<li>Measure from where the top of the blind will sit down to the sill. The blind should overlap the opening at the top by at least 1-1/2″ — some products need more clearance for mounting hardware, so we'll confirm the exact amount for your chosen product. If there's no sill, measure to the point you'd like the blind to reach.</li>
+					</ul>
+				</div>
+			</div>
 
 			<div style="background:#F7F3EC;border-left:4px solid #C9973E;border-radius:12px;padding:22px 24px;margin-bottom:30px">
 				<h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.45rem;margin:0 0 10px">Why we still measure for you</h2>
