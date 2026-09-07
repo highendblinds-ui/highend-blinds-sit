@@ -146,6 +146,45 @@ function highend_simple_admin_intercept() {
 			}
 		}
 
+		if ( isset( $_POST['highend_rename_submit'] ) ) {
+			if ( ! isset( $_POST['highend_rename_nonce'] ) || ! wp_verify_nonce( $_POST['highend_rename_nonce'], 'highend_rename_photos' ) ) {
+				$error = 'Your session expired. Please try again.';
+			} else {
+				$uploads     = wp_upload_dir();
+				$gallery_dir = trailingslashit( $uploads['basedir'] ) . 'highend-gallery/';
+				$renamed     = array();
+				$rename_failed = array();
+				foreach ( (array) ( $_POST['highend_rename_name'] ?? array() ) as $old_file => $new_desc ) {
+					$old_file = sanitize_file_name( $old_file );
+					$new_desc = trim( (string) $new_desc );
+					$old_path = $gallery_dir . $old_file;
+					if ( '' === $new_desc || ! file_exists( $old_path ) ) {
+						continue;
+					}
+					$ext      = pathinfo( $old_file, PATHINFO_EXTENSION );
+					$new_base = sanitize_title( $new_desc );
+					if ( '' === $new_base ) {
+						continue;
+					}
+					$new_name = wp_unique_filename( $gallery_dir, $new_base . '.' . $ext );
+					if ( @rename( $old_path, $gallery_dir . $new_name ) ) {
+						$renamed[] = $old_file . ' → ' . $new_name;
+					} else {
+						$rename_failed[] = $old_file;
+					}
+				}
+				if ( $renamed ) {
+					$notice = 'Renamed: ' . esc_html( implode( ', ', $renamed ) ) . '.';
+				}
+				if ( $rename_failed ) {
+					$error = 'Could not rename: ' . esc_html( implode( ', ', $rename_failed ) ) . '.';
+				}
+				if ( ! $renamed && ! $rename_failed ) {
+					$notice = 'No photo names were filled in, so nothing was renamed.';
+				}
+			}
+		}
+
 		if ( isset( $_POST['highend_post_submit'] ) && current_user_can( 'publish_posts' ) ) {
 			if ( ! isset( $_POST['highend_post_nonce'] ) || ! wp_verify_nonce( $_POST['highend_post_nonce'], 'highend_post_publish' ) ) {
 				$error = 'Your session expired. Please try again.';
@@ -249,6 +288,33 @@ function highend_render_simple_admin( $notice = '', $error = '' ) {
 					<button type="submit" name="highend_gallery_submit" value="1">Upload to Gallery</button>
 				</form>
 			</div>
+
+			<?php
+			$uploads          = wp_upload_dir();
+			$hb_gallery_dir   = trailingslashit( $uploads['basedir'] ) . 'highend-gallery/';
+			$hb_gallery_url   = trailingslashit( $uploads['baseurl'] ) . 'highend-gallery/';
+			$hb_gallery_files = array_merge( (array) glob( $hb_gallery_dir . '*.jpg' ), (array) glob( $hb_gallery_dir . '*.jpeg' ) );
+			natsort( $hb_gallery_files );
+			?>
+			<?php if ( $hb_gallery_files ) : ?>
+			<div class="hb-card">
+				<h2>Rename Gallery Photos</h2>
+				<p style="font-size:13px;color:var(--muted);margin-top:-8px">Type a real description for any photo you want to rename (e.g. "zebra blinds kitchen edmonton"). Leave blank to skip a photo.</p>
+				<form method="post">
+					<?php foreach ( $hb_gallery_files as $hb_file ) : $hb_fname = basename( $hb_file ); ?>
+						<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+							<img src="<?php echo esc_url( $hb_gallery_url . $hb_fname ); ?>" style="width:64px;height:64px;object-fit:cover;border-radius:8px;flex-shrink:0;margin-bottom:0">
+							<div style="flex:1">
+								<div style="font-size:12px;color:var(--muted);margin-bottom:4px"><?php echo esc_html( $hb_fname ); ?></div>
+								<input type="text" name="highend_rename_name[<?php echo esc_attr( $hb_fname ); ?>]" placeholder="e.g. zebra blinds kitchen edmonton" style="margin-bottom:0">
+							</div>
+						</div>
+					<?php endforeach; ?>
+					<?php wp_nonce_field( 'highend_rename_photos', 'highend_rename_nonce' ); ?>
+					<button type="submit" name="highend_rename_submit" value="1">Rename Filled-In Photos</button>
+				</form>
+			</div>
+			<?php endif; ?>
 
 			<div class="hb-card">
 				<h2>Add Blog Post</h2>
