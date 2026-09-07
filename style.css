@@ -80,15 +80,15 @@ input,select,textarea{font-family:var(--font-body)}
 .hb-hero .hb-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:48px;align-items:center;padding-top:56px;padding-bottom:60px}
 .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.16em;color:var(--primary);text-transform:uppercase;margin-bottom:16px}
 .hb-hero h1{font-weight:600;font-size:clamp(2.5rem,4.4vw,4rem);line-height:1.06;letter-spacing:-.01em;margin:0 0 20px}
-.hb-hero .lead{font-size:1.16rem;line-height:1.65;color:var(--ink);max-width:33rem;margin:0 0 30px}
+.hb-hero .lead{font-size:1.22rem;font-weight:500;line-height:1.65;color:var(--ink);max-width:33rem;margin:0 0 30px}
 .hb-hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:34px}
 .hb-hero-trust{display:flex;flex-wrap:wrap;gap:22px 26px}
 .hb-hero-trust .item{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:#3a352d}
 .hb-hero-trust .ico{color:var(--primary);display:flex}
 .hb-carousel{position:relative;aspect-ratio:1/1;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-elevated)}
 .hb-track{display:flex;height:100%;transition:transform .6s cubic-bezier(.4,0,.2,1)}
-.hb-slide{position:relative;flex:0 0 100%;height:100%;background:var(--surface-soft)}
-.hb-slide img{width:100%;height:100%;object-fit:contain}
+.hb-slide{position:relative;flex:0 0 100%;height:100%}
+.hb-slide img{width:100%;height:100%;object-fit:cover}
 .hb-slide-caption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:76px 68px 52px;color:#fff;background:linear-gradient(180deg,transparent,rgba(12,12,12,.82));display:flex;flex-direction:column;gap:5px;text-align:left;pointer-events:none}
 .hb-slide-caption strong{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.3rem,2.2vw,1.75rem);line-height:1.12;text-shadow:0 2px 12px rgba(0,0,0,.4)}
 .hb-slide-caption span{font-size:13px;line-height:1.45;font-weight:600;max-width:38ch;text-shadow:0 1px 8px rgba(0,0,0,.55)}
@@ -127,7 +127,7 @@ input,select,textarea{font-family:var(--font-body)}
 .hb-card .thumb.ph span{margin:10px;font-family:'Courier New',monospace;font-size:10px;color:#8a7f6d;background:rgba(255,255,255,.72);padding:3px 7px;border-radius:6px}
 .hb-card .body{padding:16px;display:flex;flex-direction:column;flex:1}
 .hb-card .title{font-weight:700;font-size:16px;margin-bottom:6px}
-.hb-card .desc{font-size:13.5px;line-height:1.5;color:var(--ink);margin-bottom:14px;flex:1}
+.hb-card .desc{font-size:14.5px;font-weight:500;line-height:1.5;color:var(--ink);margin-bottom:14px;flex:1}
 .hb-learn{display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid #E4D8C2;color:var(--primary);font-weight:700;font-size:12.5px;padding:9px;border-radius:999px;transition:background .18s ease}
 .hb-learn:hover{background:var(--bg);color:var(--primary)}
 .hb-learn svg{width:13px;height:13px}
@@ -303,6 +303,7 @@ input,select,textarea{font-family:var(--font-body)}
   .hb-card .title{font-size:22px;line-height:1.25;text-align:center;margin-bottom:10px}
   body{font-size:16.5px}
   .hb-card .desc,.hb-post .excerpt,.hb-review p,.hb-why-grid .txt,.hb-cinfo .line,.hb-topbar,.hb-form input,.hb-form select,.hb-form textarea,.content,.content p,.content li{font-size:15.5px!important;line-height:1.65!important}
+  .hb-card .desc{font-size:16.5px!important;font-weight:500!important}
   .hb-nav a{font-size:16px!important}
   .hb-rate{font-size:15px!important}
   .hb-service .bar{align-items:flex-start;flex-wrap:wrap}
