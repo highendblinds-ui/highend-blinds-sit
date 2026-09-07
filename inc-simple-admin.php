@@ -143,7 +143,7 @@ function highend_simple_admin_intercept() {
 			if ( ! isset( $_POST['highend_post_nonce'] ) || ! wp_verify_nonce( $_POST['highend_post_nonce'], 'highend_post_publish' ) ) {
 				$error = 'Your session expired. Please try again.';
 			} else {
-				$title   = sanitize_text_field( $_POST['highend_post_title'] ?? '' );
+				$title   = trim( sanitize_text_field( $_POST['highend_post_title'] ?? '' ), " \t\n\r\0\x0B\"'\xe2\x80\x9c\xe2\x80\x9d" );
 				$content = wp_kses_post( highend_simple_markdown( $_POST['highend_post_content'] ?? '' ) );
 				if ( '' === trim( $title ) || '' === trim( $content ) ) {
 					$error = 'Please fill in both a title and content for the post.';
