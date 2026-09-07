@@ -252,4 +252,22 @@ $reviews = array(
 	</div>
 </section>
 
+<!-- CONTACT -->
+<section id="contact" class="hb-sec hb-contact" style="padding:48px 0 72px">
+	<div class="hb-wrap" style="max-width:1160px">
+		<div style="max-width:560px">
+			<h3>Contact Information</h3>
+			<div class="hb-cinfo">
+				<div class="line"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><div><strong>HighEnd Blinds Inc.</strong><br>3261 Parsons Rd NW<br>Edmonton, AB T6N 1B4</div></div>
+				<div class="line"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A18 18 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg></span><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9]/', '', HIGHEND_PHONE ) ); ?>" style="font-weight:600"><?php echo esc_html( HIGHEND_PHONE ); ?></a></div>
+				<div class="line"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span><a href="mailto:<?php echo esc_attr( HIGHEND_EMAIL ); ?>" style="font-weight:600"><?php echo esc_html( HIGHEND_EMAIL ); ?></a></div>
+				<div class="line"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><div style="line-height:1.7">Mon &ndash; Fri: 10:00 AM &ndash; 6:30 PM<br>Sat: 12:00 PM &ndash; 4:00 PM<br>Sun: Closed</div></div>
+			</div>
+			<div class="hb-map">
+				<iframe title="HighEnd Blinds location on Google Maps" src="https://maps.google.com/maps?q=3261+Parsons+Rd+NW+Edmonton+AB&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+	</div>
+</section>
+
 <?php get_footer(); ?>
