@@ -124,6 +124,26 @@ $reviews = array(
 	</div>
 </section>
 
+<!-- GALLERY -->
+<section id="gallery" class="hb-sec center">
+	<div class="hb-wrap">
+		<a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>" style="display:block;text-decoration:none;color:inherit">
+			<div class="eyebrow">Our Gallery</div>
+			<h2>See Our Work</h2>
+		</a>
+		<div class="hb-gallery-grid">
+			<?php for ( $i = 1; $i <= 6; $i++ ) :
+				$gsrc = get_template_directory_uri() . '/assets/images/gallery-' . str_pad( $i, 2, '0', STR_PAD_LEFT ) . '.jpg';
+				?>
+				<div class="cell" onclick="hbOpenGallery(<?php echo (int) ( $i - 1 ); ?>)" style="cursor:pointer"><img src="<?php echo esc_url( $gsrc ); ?>" alt="HighEnd Blinds project photo <?php echo esc_attr( $i ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+			<?php endfor; ?>
+		</div>
+		<div style="display:flex;justify-content:center;margin-top:36px">
+			<a class="btn btn--outline" href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>">View Full Gallery <?php highend_arrow(); ?></a>
+		</div>
+	</div>
+</section>
+
 <!-- LOCAL TRUST -->
 <section class="hb-sec hb-local-story">
 	<div class="hb-wrap">
@@ -181,26 +201,6 @@ $reviews = array(
 				<a class="btn btn--white" style="align-self:flex-start" href="<?php echo esc_url( $contact ); ?>">Claim Free Estimate <?php highend_arrow(); ?></a>
 			</div>
 			<a class="pic" href="<?php echo esc_url( $contact ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/offer-1.jpg' ); ?>" alt="Premium custom blinds" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></a>
-		</div>
-	</div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery" class="hb-sec center">
-	<div class="hb-wrap">
-		<a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>" style="display:block;text-decoration:none;color:inherit">
-			<div class="eyebrow">Our Gallery</div>
-			<h2>See Our Work</h2>
-		</a>
-		<div class="hb-gallery-grid">
-			<?php for ( $i = 1; $i <= 6; $i++ ) :
-				$gsrc = get_template_directory_uri() . '/assets/images/gallery-' . str_pad( $i, 2, '0', STR_PAD_LEFT ) . '.jpg';
-				?>
-				<div class="cell" onclick="hbOpenGallery(<?php echo (int) ( $i - 1 ); ?>)" style="cursor:pointer"><img src="<?php echo esc_url( $gsrc ); ?>" alt="HighEnd Blinds project photo <?php echo esc_attr( $i ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-			<?php endfor; ?>
-		</div>
-		<div style="display:flex;justify-content:center;margin-top:36px">
-			<a class="btn btn--outline" href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>">View Full Gallery <?php highend_arrow(); ?></a>
 		</div>
 	</div>
 </section>
