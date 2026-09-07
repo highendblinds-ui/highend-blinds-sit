@@ -302,6 +302,7 @@ add_action( 'admin_post_nopriv_highend_estimate', 'highend_handle_estimate_form'
 
 require_once get_template_directory() . '/inc-product-page.php';
 require_once get_template_directory() . '/inc-service-cities.php';
+require_once get_template_directory() . '/inc-simple-admin.php';
 
 /**
  * Import the legacy HighEnd Blinds articles once. The bundled JSON contains
