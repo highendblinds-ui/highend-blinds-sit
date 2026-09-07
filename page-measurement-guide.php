@@ -16,7 +16,20 @@ get_header();
 			<p style="font-size:16px;line-height:1.75;color:#3a352d;margin:0 0 28px">Every custom blind or curtain is built to the exact size of your window, so accurate measurement matters. Below are our measuring instructions by mount type. We still recommend a free in-home measurement before ordering — our team takes all required manufacturing allowances for you.</p>
 
 			<div style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;margin-bottom:36px">
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/measurement-inside-mount.gif' ); ?>" alt="Inside mount window measurement diagram showing width and height measurement points" style="width:150px;height:auto;flex-shrink:0">
+				<svg width="150" height="190" viewBox="0 0 150 190" role="img" aria-label="Inside mount window measurement diagram showing width and height measurement points" style="flex-shrink:0">
+					<rect x="24" y="18" width="102" height="130" fill="#fff" stroke="#151515" stroke-width="2"></rect>
+					<rect x="38" y="30" width="74" height="106" fill="#F7F3EC" stroke="#151515" stroke-width="1.4"></rect>
+					<rect x="14" y="148" width="122" height="12" fill="#E8DFD0" stroke="#151515" stroke-width="1.4"></rect>
+					<line x1="38" y1="9" x2="112" y2="9" stroke="#C9973E" stroke-width="1.6"></line>
+					<path d="M38 5.5 L38 12.5 L32 9 Z" fill="#C9973E"></path>
+					<path d="M112 5.5 L112 12.5 L118 9 Z" fill="#C9973E"></path>
+					<text x="75" y="6" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#C9973E">WIDTH</text>
+					<line x1="10" y1="30" x2="10" y2="136" stroke="#C9973E" stroke-width="1.6"></line>
+					<path d="M6.5 30 L13.5 30 L10 24 Z" fill="#C9973E"></path>
+					<path d="M6.5 136 L13.5 136 L10 142 Z" fill="#C9973E"></path>
+					<text x="0" y="83" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#C9973E" transform="rotate(-90 0 83)">HEIGHT</text>
+					<line x1="38" y1="83" x2="112" y2="83" stroke="#151515" stroke-width="0.7" stroke-dasharray="3 2"></line>
+				</svg>
 				<div>
 					<h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;margin:0 0 16px">Inside mount</h2>
 					<ul style="display:grid;gap:12px;margin:0;padding-left:22px;line-height:1.65;color:#3a352d">
@@ -29,7 +42,21 @@ get_header();
 			</div>
 
 			<div style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;margin-bottom:36px">
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/measurement-outside-mount.gif' ); ?>" alt="Outside mount window measurement diagram showing width and height measurement points" style="width:150px;height:auto;flex-shrink:0">
+				<svg width="165" height="190" viewBox="0 0 165 190" role="img" aria-label="Outside mount window measurement diagram showing width and height measurement points" style="flex-shrink:0">
+					<rect x="10" y="26" width="130" height="10" fill="#151515"></rect>
+					<rect x="30" y="36" width="90" height="112" fill="#fff" stroke="#151515" stroke-width="2"></rect>
+					<rect x="44" y="48" width="62" height="88" fill="#F7F3EC" stroke="#151515" stroke-width="1.4"></rect>
+					<rect x="20" y="148" width="110" height="12" fill="#E8DFD0" stroke="#151515" stroke-width="1.4"></rect>
+					<line x1="10" y1="13" x2="140" y2="13" stroke="#C9973E" stroke-width="1.6"></line>
+					<path d="M10 9.5 L10 16.5 L4 13 Z" fill="#C9973E"></path>
+					<path d="M140 9.5 L140 16.5 L146 13 Z" fill="#C9973E"></path>
+					<text x="75" y="10" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#C9973E">WIDTH</text>
+					<line x1="146" y1="26" x2="146" y2="148" stroke="#C9973E" stroke-width="1.6"></line>
+					<path d="M142.5 26 L149.5 26 L146 20 Z" fill="#C9973E"></path>
+					<path d="M142.5 148 L149.5 148 L146 154 Z" fill="#C9973E"></path>
+					<text x="150" y="90" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#C9973E" transform="rotate(-90 150 90)">HEIGHT</text>
+					<line x1="30" y1="90" x2="120" y2="90" stroke="#151515" stroke-width="0.7" stroke-dasharray="3 2"></line>
+				</svg>
 				<div>
 					<h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;margin:0 0 16px">Outside mount</h2>
 					<ul style="display:grid;gap:12px;margin:0;padding-left:22px;line-height:1.65;color:#3a352d">
