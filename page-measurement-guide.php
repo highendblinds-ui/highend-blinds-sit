@@ -16,19 +16,32 @@ get_header();
 			<p style="font-size:16px;line-height:1.75;color:#3a352d;margin:0 0 28px">Every custom blind or curtain is built to the exact size of your window, so accurate measurement matters. Below are our measuring instructions by mount type. We still recommend a free in-home measurement before ordering — our team takes all required manufacturing allowances for you.</p>
 
 			<div style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;margin-bottom:36px">
-				<svg width="150" height="190" viewBox="0 0 150 190" role="img" aria-label="Inside mount window measurement diagram showing width and height measurement points" style="flex-shrink:0">
+				<svg width="164" height="190" viewBox="-14 0 164 190" role="img" aria-label="Inside mount window measurement diagram showing three width and three height measurement points" style="flex-shrink:0">
 					<rect x="24" y="18" width="102" height="130" fill="#fff" stroke="#151515" stroke-width="2"></rect>
 					<rect x="38" y="30" width="74" height="106" fill="#F7F3EC" stroke="#151515" stroke-width="1.4"></rect>
 					<rect x="14" y="148" width="122" height="12" fill="#E8DFD0" stroke="#151515" stroke-width="1.4"></rect>
-					<line x1="38" y1="9" x2="112" y2="9" stroke="#C9973E" stroke-width="1.6"></line>
-					<path d="M38 5.5 L38 12.5 L32 9 Z" fill="#C9973E"></path>
-					<path d="M112 5.5 L112 12.5 L118 9 Z" fill="#C9973E"></path>
-					<text x="75" y="6" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#C9973E">WIDTH</text>
-					<line x1="10" y1="30" x2="10" y2="136" stroke="#C9973E" stroke-width="1.6"></line>
-					<path d="M6.5 30 L13.5 30 L10 24 Z" fill="#C9973E"></path>
-					<path d="M6.5 136 L13.5 136 L10 142 Z" fill="#C9973E"></path>
-					<text x="0" y="83" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#C9973E" transform="rotate(-90 0 83)">HEIGHT</text>
-					<line x1="38" y1="83" x2="112" y2="83" stroke="#151515" stroke-width="0.7" stroke-dasharray="3 2"></line>
+					<text x="75" y="6" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#F5332A">WIDTH</text>
+					<text x="0" y="83" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#F5332A" transform="rotate(-90 0 83)">HEIGHT</text>
+					<g stroke="#F5332A" stroke-width="1.2">
+						<line x1="38" y1="36" x2="112" y2="36"></line>
+						<line x1="38" y1="83" x2="112" y2="83"></line>
+						<line x1="38" y1="130" x2="112" y2="130"></line>
+					</g>
+					<g fill="#F5332A">
+						<path d="M38 33 L38 39 L33 36 Z"></path><path d="M112 33 L112 39 L117 36 Z"></path>
+						<path d="M38 80 L38 86 L33 83 Z"></path><path d="M112 80 L112 86 L117 83 Z"></path>
+						<path d="M38 127 L38 133 L33 130 Z"></path><path d="M112 127 L112 133 L117 130 Z"></path>
+					</g>
+					<g stroke="#F5332A" stroke-width="1.2">
+						<line x1="51" y1="30" x2="51" y2="136"></line>
+						<line x1="75" y1="30" x2="75" y2="136"></line>
+						<line x1="99" y1="30" x2="99" y2="136"></line>
+					</g>
+					<g fill="#F5332A">
+						<path d="M48 30 L54 30 L51 25 Z"></path><path d="M48 136 L54 136 L51 141 Z"></path>
+						<path d="M72 30 L78 30 L75 25 Z"></path><path d="M72 136 L78 136 L75 141 Z"></path>
+						<path d="M96 30 L102 30 L99 25 Z"></path><path d="M96 136 L102 136 L99 141 Z"></path>
+					</g>
 				</svg>
 				<div>
 					<h2 style="font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;margin:0 0 16px">Inside mount</h2>
