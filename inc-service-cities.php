@@ -58,7 +58,7 @@ function highend_render_service_city( $key ) {
 	<section class="hb-city-hero">
 		<div class="hb-wrap">
 			<div class="eyebrow">Locally Made in Edmonton</div>
-			<h1>Custom Blinds in <?php echo esc_html( $city ); ?></h1>
+			<h1>Custom Blinds <?php echo esc_html( $city ); ?></h1>
 			<p><?php echo esc_html( $c['intro'] ); ?></p>
 			<div class="hb-city-actions"><a class="btn btn--primary" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">Book Free Consultation <?php highend_arrow(); ?></a><a class="btn btn--outline" href="tel:<?php echo esc_attr( preg_replace( '/[^0-9]/', '', HIGHEND_PHONE ) ); ?>">Call <?php echo esc_html( HIGHEND_PHONE ); ?></a></div>
 		</div>
