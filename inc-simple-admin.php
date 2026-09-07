@@ -104,7 +104,7 @@ function highend_simple_admin_intercept() {
 				$uploads     = wp_upload_dir();
 				$gallery_dir = trailingslashit( $uploads['basedir'] ) . 'highend-gallery/';
 				wp_mkdir_p( $gallery_dir );
-				$description = sanitize_title( $_POST['highend_gallery_description'] ?? '' );
+				$names       = $_POST['highend_gallery_names'] ?? array();
 				$added       = array();
 				$failed      = array();
 				$count       = count( $_FILES['highend_gallery_file']['name'] );
@@ -124,12 +124,9 @@ function highend_simple_admin_intercept() {
 						$failed[] = $single['name'] . ' (' . $moved['error'] . ')';
 						continue;
 					}
-					$ext = pathinfo( $moved['file'], PATHINFO_EXTENSION );
-					if ( $description ) {
-						$base_name = $count > 1 ? $description . '-' . ( $i + 1 ) : $description;
-					} else {
-						$base_name = basename( $moved['file'], '.' . $ext );
-					}
+					$ext       = pathinfo( $moved['file'], PATHINFO_EXTENSION );
+					$this_name = isset( $names[ $i ] ) ? sanitize_title( $names[ $i ] ) : '';
+					$base_name = $this_name ? $this_name : basename( $moved['file'], '.' . $ext );
 					$final_name = wp_unique_filename( $gallery_dir, $base_name . '.' . $ext );
 					if ( @rename( $moved['file'], $gallery_dir . $final_name ) ) {
 						$added[] = $final_name;
@@ -281,9 +278,8 @@ function highend_render_simple_admin( $notice = '', $error = '' ) {
 				<h2>Add Gallery Photos</h2>
 				<form method="post" enctype="multipart/form-data">
 					<label for="highend_gallery_file">Photos (JPG — select multiple at once)</label>
-					<input type="file" id="highend_gallery_file" name="highend_gallery_file[]" accept="image/jpeg" multiple required>
-					<label for="highend_gallery_description">Description (optional — used to name the file(s) for SEO, e.g. "zebra-blinds-living-room-edmonton")</label>
-					<input type="text" id="highend_gallery_description" name="highend_gallery_description" placeholder="e.g. zebra blinds living room edmonton">
+					<input type="file" id="highend_gallery_file" name="highend_gallery_file[]" accept="image/jpeg" multiple required onchange="highendBuildGalleryNames(this)">
+					<div id="highend_gallery_names_wrap"></div>
 					<?php wp_nonce_field( 'highend_gallery_upload', 'highend_gallery_nonce' ); ?>
 					<button type="submit" name="highend_gallery_submit" value="1">Upload to Gallery</button>
 				</form>
@@ -331,6 +327,40 @@ function highend_render_simple_admin( $notice = '', $error = '' ) {
 			</div>
 		<?php endif; ?>
 	</div>
+	<script>
+	function highendBuildGalleryNames(input){
+		var wrap = document.getElementById('highend_gallery_names_wrap');
+		wrap.innerHTML = '';
+		var files = input.files;
+		for (var i = 0; i < files.length; i++){
+			var row = document.createElement('div');
+			row.style.cssText = 'display:flex;align-items:center;gap:12px;margin-bottom:12px';
+
+			var img = document.createElement('img');
+			img.src = URL.createObjectURL(files[i]);
+			img.style.cssText = 'width:56px;height:56px;object-fit:cover;border-radius:8px;flex-shrink:0;margin-bottom:0';
+
+			var col = document.createElement('div');
+			col.style.flex = '1';
+
+			var label = document.createElement('div');
+			label.textContent = files[i].name;
+			label.style.cssText = 'font-size:12px;color:var(--muted);margin-bottom:4px';
+
+			var nameInput = document.createElement('input');
+			nameInput.type = 'text';
+			nameInput.name = 'highend_gallery_names[]';
+			nameInput.placeholder = 'e.g. zebra blinds kitchen edmonton';
+			nameInput.style.marginBottom = '0';
+
+			col.appendChild(label);
+			col.appendChild(nameInput);
+			row.appendChild(img);
+			row.appendChild(col);
+			wrap.appendChild(row);
+		}
+	}
+	</script>
 	</body>
 	</html>
 	<?php
