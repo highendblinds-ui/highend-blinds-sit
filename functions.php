@@ -258,20 +258,38 @@ function highend_arrow() {
 }
 
 /**
- * Returns every gallery image found in /assets/images/ (gallery-*.jpg), sorted in
- * numeric order. Powers the gallery lightbox/slider so it always includes every
- * photo that exists in the folder - no code changes needed when photos are added.
+ * Returns every gallery image, sorted in numeric order: the photos bundled with
+ * the theme (/assets/images/gallery-*.jpg) plus anything uploaded later through
+ * the /admin tool (stored in wp-content/uploads/highend-gallery/, outside the
+ * Git-deployed theme folder so uploads survive future deploys).
  */
 function highend_gallery_images() {
-	$files = glob( get_template_directory() . '/assets/images/gallery-*.jpg' );
-	if ( ! $files ) {
-		return array();
-	}
-	natsort( $files );
 	$urls = array();
-	foreach ( $files as $file ) {
-		$urls[] = get_template_directory_uri() . '/assets/images/' . basename( $file );
+
+	$theme_files = glob( get_template_directory() . '/assets/images/gallery-*.jpg' );
+	if ( $theme_files ) {
+		natsort( $theme_files );
+		foreach ( $theme_files as $file ) {
+			$urls[] = get_template_directory_uri() . '/assets/images/' . basename( $file );
+		}
 	}
+
+	$uploads     = wp_upload_dir();
+	$gallery_dir = trailingslashit( $uploads['basedir'] ) . 'highend-gallery/';
+	$gallery_url = trailingslashit( $uploads['baseurl'] ) . 'highend-gallery/';
+	if ( is_dir( $gallery_dir ) ) {
+		$uploaded_files = array_merge(
+			(array) glob( $gallery_dir . '*.jpg' ),
+			(array) glob( $gallery_dir . '*.jpeg' )
+		);
+		if ( $uploaded_files ) {
+			natsort( $uploaded_files );
+			foreach ( $uploaded_files as $file ) {
+				$urls[] = $gallery_url . basename( $file );
+			}
+		}
+	}
+
 	return array_values( $urls );
 }
 
