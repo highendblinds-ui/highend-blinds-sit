@@ -65,11 +65,11 @@ function highend_default_nav() {
 	echo '<nav class="hb-nav">';
 	echo '<a class="current" href="' . esc_url( $home ) . '">Home</a>';
 	echo '<details class="hb-nav-dd"><summary>Products <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></summary><div>';
-	echo '<a href="' . esc_url( home_url( '/zebra-blinds/' ) ) . '">Zebra Blinds</a>';
-	echo '<a href="' . esc_url( home_url( '/roller-blinds/' ) ) . '">Roller Blinds</a>';
-	echo '<a href="' . esc_url( home_url( '/curtains/' ) ) . '">Dream Curtains</a>';
-	echo '<a href="' . esc_url( home_url( '/motorized-blinds/' ) ) . '">Motorized Blinds</a>';
-	echo '<a href="' . esc_url( home_url( '/motorized-curtains/' ) ) . '">Motorized Curtains</a>';
+	echo '<a href="' . esc_url( home_url( '/zebra-blinds/' ) ) . '">Zebra <span style="color:var(--brand-red)">Blinds</span></a>';
+	echo '<a href="' . esc_url( home_url( '/roller-blinds/' ) ) . '">Roller <span style="color:var(--brand-red)">Blinds</span></a>';
+	echo '<a href="' . esc_url( home_url( '/curtains/' ) ) . '">Dream <span style="color:var(--brand-red)">Curtains</span></a>';
+	echo '<a href="' . esc_url( home_url( '/motorized-blinds/' ) ) . '">Motorized <span style="color:var(--brand-red)">Blinds</span></a>';
+	echo '<a href="' . esc_url( home_url( '/motorized-curtains/' ) ) . '">Motorized <span style="color:var(--brand-red)">Curtains</span></a>';
 	echo '</div></details>';
 	echo '<a href="' . esc_url( $home . '#gallery' ) . '">Gallery</a>';
 	echo '<a href="' . esc_url( $home . '#reviews' ) . '">Reviews</a>';
