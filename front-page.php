@@ -188,8 +188,10 @@ $reviews = array(
 <!-- GALLERY -->
 <section id="gallery" class="hb-sec center">
 	<div class="hb-wrap">
-		<div class="eyebrow">Our Gallery</div>
-		<h2>See Our Work</h2>
+		<a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>" style="display:block;text-decoration:none;color:inherit">
+			<div class="eyebrow">Our Gallery</div>
+			<h2>See Our Work</h2>
+		</a>
 		<div class="hb-gallery-grid">
 			<?php for ( $i = 1; $i <= 6; $i++ ) :
 				$gsrc = get_template_directory_uri() . '/assets/images/gallery-' . str_pad( $i, 2, '0', STR_PAD_LEFT ) . '.jpg';
