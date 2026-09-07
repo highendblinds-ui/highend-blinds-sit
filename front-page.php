@@ -50,8 +50,6 @@ $reviews = array(
 			<div class="hb-hero-trust">
 				<div class="item"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="10" rx="1.5"></rect><path d="M6 7v3M10 7v4M14 7v3M18 7v4"></path></svg></span>Free Measurement</div>
 				<div class="item"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M14.5 5.5a3.6 3.6 0 0 1-4.7 4.7l-6.1 6.1 2.3 2.3 6.1-6.1a3.6 3.6 0 0 0 4.7-4.7l-2.2 2.2-2.1-.7-.7-2.1z"></path></svg></span>Free Installation</div>
-				<div class="item"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>Made in Edmonton</div>
-				<div class="item"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="3"></rect><path d="M12 6v3"></path><circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none"></circle></svg></span>Motorized Options</div>
 			</div>
 		</div>
 		<?php

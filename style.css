@@ -313,8 +313,9 @@ input,select,textarea{font-family:var(--font-body)}
   .hb-service .bar{align-items:flex-start;flex-wrap:wrap}
   .hb-service .bar>a{width:100%;margin-left:40px!important}
   .hb-city-cta{align-items:flex-start;flex-direction:column;padding:24px}
-  .hb-hero-trust{display:grid;grid-template-columns:1fr 1fr;gap:12px 10px}
-  .hb-hero-trust .item{font-size:17px!important}
+  .hb-hero-trust{display:flex;flex-wrap:nowrap;gap:10px}
+  .hb-hero-trust .item{font-size:16px!important;white-space:nowrap;gap:5px!important}
+  .hb-hero-trust .ico svg{width:16px!important;height:16px!important}
 }
 @media (max-width:900px){
   .hb-topbar .hb-addr{display:none}
