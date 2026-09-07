@@ -144,7 +144,7 @@ function highend_render_product_page( $key ) {
 	<section style="background:linear-gradient(180deg,#FAF8F3,#F4EDE1)">
 		<div class="hb-wrap" style="padding:56px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:center">
 			<div>
-				<div style="font-size:11.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#C9973E"><?php echo esc_html( $p['eyebrow'] ); ?></div>
+				<div style="font-size:11.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#F5332A"><?php echo esc_html( $p['eyebrow'] ); ?></div>
 				<h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.6vw,2.5rem);line-height:1.15;margin-top:12px;max-width:36ch"><?php echo esc_html( $p['title'] ); ?></h1>
 				<p style="margin-top:16px;font-size:18px;font-weight:500;line-height:1.7;color:#151515;max-width:66ch"><?php echo esc_html( $p['intro'] ); ?></p>
 				<div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:28px">
