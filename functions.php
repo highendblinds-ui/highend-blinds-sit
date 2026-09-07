@@ -158,7 +158,7 @@ function highend_seo_head() {
 		}
 	}
 }
-add_action( 'wp_head', 'highend_seo_head', 2 );
+add_action( 'wp_head', 'highend_seo_head', -999 );
 
 /** Use the uploaded root favicon until a WordPress Site Icon is selected. */
 function highend_favicon_fallback() {
