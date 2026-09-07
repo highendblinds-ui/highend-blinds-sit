@@ -287,8 +287,9 @@ input,select,textarea{font-family:var(--font-body)}
 .hb-article .content{font-size:1.05rem;line-height:1.75;color:#2b2620}
 .hb-article .content p{margin:0 0 1.2em}
 .hb-article .content img{border-radius:14px;margin:1.2em 0}
-.hb-archive-head{background:var(--bg);border-bottom:1px solid var(--border);text-align:center;padding:56px 40px}
+.hb-archive-head{background:var(--bg);border-bottom:1px solid var(--border);text-align:center;padding:28px 40px}
 .hb-archive-head h1{font-size:clamp(2rem,4vw,3rem);margin:0}
+.hb-archive-head .eyebrow{color:var(--ink)}
 .hb-pagination{display:flex;justify-content:center;gap:10px;margin-top:36px}
 .hb-pagination .page-numbers{padding:8px 14px;border:1px solid var(--border);border-radius:10px;color:var(--ink)}
 .hb-pagination .current{background:var(--primary);color:#fff;border-color:var(--primary)}
