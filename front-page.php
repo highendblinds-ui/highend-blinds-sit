@@ -41,7 +41,7 @@ $reviews = array(
 	<div class="hb-wrap">
 		<div>
 			<div class="eyebrow">Made in Edmonton</div>
-			<h1>Custom Blinds &amp; Curtains Made in Edmonton</h1>
+			<h1>Custom Blinds Edmonton — Curtains &amp; Motorized Window Coverings</h1>
 			<p class="lead">Premium zebra blinds, roller blinds, motorized blinds, and curtains — measured, made, and installed locally in Edmonton.</p>
 			<div class="hb-hero-cta">
 				<a class="btn btn--primary" href="<?php echo esc_url( $contact ); ?>">Book Free Estimate <?php highend_arrow(); ?></a>
