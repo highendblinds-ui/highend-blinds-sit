@@ -104,9 +104,10 @@ function highend_simple_admin_intercept() {
 				$uploads     = wp_upload_dir();
 				$gallery_dir = trailingslashit( $uploads['basedir'] ) . 'highend-gallery/';
 				wp_mkdir_p( $gallery_dir );
-				$added  = array();
-				$failed = array();
-				$count  = count( $_FILES['highend_gallery_file']['name'] );
+				$description = sanitize_title( $_POST['highend_gallery_description'] ?? '' );
+				$added       = array();
+				$failed      = array();
+				$count       = count( $_FILES['highend_gallery_file']['name'] );
 				for ( $i = 0; $i < $count; $i++ ) {
 					if ( empty( $_FILES['highend_gallery_file']['name'][ $i ] ) ) {
 						continue;
@@ -123,7 +124,13 @@ function highend_simple_admin_intercept() {
 						$failed[] = $single['name'] . ' (' . $moved['error'] . ')';
 						continue;
 					}
-					$final_name = wp_unique_filename( $gallery_dir, basename( $moved['file'] ) );
+					$ext = pathinfo( $moved['file'], PATHINFO_EXTENSION );
+					if ( $description ) {
+						$base_name = $count > 1 ? $description . '-' . ( $i + 1 ) : $description;
+					} else {
+						$base_name = basename( $moved['file'], '.' . $ext );
+					}
+					$final_name = wp_unique_filename( $gallery_dir, $base_name . '.' . $ext );
 					if ( @rename( $moved['file'], $gallery_dir . $final_name ) ) {
 						$added[] = $final_name;
 					} else {
@@ -164,8 +171,12 @@ function highend_simple_admin_intercept() {
 							$attachment_id = media_handle_upload( 'highend_post_image', $post_id );
 							if ( ! is_wp_error( $attachment_id ) ) {
 								set_post_thumbnail( $post_id, $attachment_id );
+								update_post_meta( $attachment_id, '_wp_attachment_image_alt', $title );
 							}
 						}
+						$excerpt = wp_trim_words( wp_strip_all_tags( $content ), 30, '…' );
+						wp_update_post( array( 'ID' => $post_id, 'post_excerpt' => $excerpt ) );
+						update_post_meta( $post_id, 'rank_math_description', $excerpt );
 						$notice = 'Blog post published: "' . esc_html( $title ) . '".';
 					}
 				}
@@ -232,6 +243,8 @@ function highend_render_simple_admin( $notice = '', $error = '' ) {
 				<form method="post" enctype="multipart/form-data">
 					<label for="highend_gallery_file">Photos (JPG — select multiple at once)</label>
 					<input type="file" id="highend_gallery_file" name="highend_gallery_file[]" accept="image/jpeg" multiple required>
+					<label for="highend_gallery_description">Description (optional — used to name the file(s) for SEO, e.g. "zebra-blinds-living-room-edmonton")</label>
+					<input type="text" id="highend_gallery_description" name="highend_gallery_description" placeholder="e.g. zebra blinds living room edmonton">
 					<?php wp_nonce_field( 'highend_gallery_upload', 'highend_gallery_nonce' ); ?>
 					<button type="submit" name="highend_gallery_submit" value="1">Upload to Gallery</button>
 				</form>
