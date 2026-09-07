@@ -51,7 +51,7 @@ function highend_document_title( $title ) {
 	$key  = highend_current_seo_key();
 	return isset( $data[ $key ] ) ? html_entity_decode( $data[ $key ][0], ENT_QUOTES, 'UTF-8' ) : $title;
 }
-add_filter( 'pre_get_document_title', 'highend_document_title' );
+add_filter( 'pre_get_document_title', 'highend_document_title', 9999 );
 
 /* Output one deliberate canonical URL below instead of WordPress's default tag. */
 remove_action( 'wp_head', 'rel_canonical' );
