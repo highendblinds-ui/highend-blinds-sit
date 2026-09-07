@@ -36,6 +36,7 @@ function highend_seo_data() {
 		'fort-saskatchewan'  => array( 'Custom Blinds Fort Saskatchewan | HighEnd Blinds', 'Custom blinds Fort Saskatchewan homeowners trust — residential and commercial, with local manufacturing, free measurement, and professional installation.' ),
 		'blog'               => array( 'Blinds & Window Covering Blog | Edmonton', 'Helpful Edmonton guides about zebra blinds, roller blinds, motorized shades, curtains, installation, light control, and home automation.' ),
 		'warranty'           => array( 'Blinds Warranty | HighEnd Blinds Edmonton', 'Review warranty coverage for blinds, components, motors, installation, curtains, and drapery supplied by HighEnd Blinds Inc. in Edmonton.' ),
+		'terms'              => array( 'Terms of Service | HighEnd Blinds Edmonton', 'Read the terms of service for HighEnd Blinds Inc., covering custom blinds, curtains, and motorized window coverings sold and installed in Edmonton.' ),
 	);
 }
 
@@ -129,7 +130,7 @@ function highend_seo_head() {
 			);
 			$faq_schema = array( '@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => array() );
 			foreach ( $product['faqs'] as $faq ) {
-				$faq_schema['mainEntity'][] = array( '@type' => 'Question', 'name' => $faq[0], 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => $faq[1] ) );
+				$faq_schema['mainEntity'][] = array( '@type' => 'Question', 'name' => $faq[0], 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => wp_strip_all_tags( $faq[1] ) ) );
 			}
 			echo '<script type="application/ld+json">' . wp_json_encode( $service_schema, JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
 			echo '<script type="application/ld+json">' . wp_json_encode( $faq_schema, JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";

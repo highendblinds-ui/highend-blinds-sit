@@ -26,6 +26,7 @@ function highend_product_data() {
 				array( 'What child-safe operating options are available for zebra blinds?', 'We offer three child-safety options: wand operation, a properly secured safety guard on chain-operated blinds, and motorized operation with no hanging control chain. We will help you select the best option for children, pets, and the location of each window.' ),
 				array( 'Do zebra blinds block UV and heat?', 'Yes — our zebra blinds fabrics reduce UV exposure and glare, helping protect Edmonton homes from summer heat and fading floors and furniture, while still letting in filtered daylight.' ),
 				array( 'Do you offer a warranty on zebra blinds in Edmonton?', 'Yes — every zebra blinds installation from our Edmonton factory is backed by a warranty on both fabric and mechanism, with local service if anything ever needs adjustment.' ),
+				array( 'Can zebra blinds be paired with curtains in the same room?', 'Yes — many Edmonton homeowners combine zebra blinds on standard windows with our <a href="' . esc_url( home_url( '/curtains/' ) ) . '">Dream Curtains</a> on a patio door or large window in the same room, for adjustable daylight control everywhere plus soft, walk-through coverage where it matters most.' ),
 			),
 		),
 		'roller-blinds' => array(
@@ -90,6 +91,7 @@ function highend_product_data() {
 				array( 'Are long curtains hard to open and close?', 'Not with ours. Long, floor-to-ceiling curtains can be heavy to pull by hand, which is why every long curtain we install runs on a quiet motorized track — open or close the full length at the touch of a button, remote, or app.' ),
 				array( 'Do long curtains work for two-storey great rooms?', "Yes — long curtains are one of our most requested solutions for Edmonton's two-storey great rooms and open-to-above windows, giving full-height coverage that a standard-length curtain or blind can't reach." ),
 				array( 'How much do long curtains cost in Edmonton?', 'Pricing for long curtains depends on the height and width of the track, fabric choice, and motorization. Because we measure, fabricate, and install locally in Edmonton, our factory-direct pricing is typically well below imported long-curtain alternatives.' ),
+				array( 'Do Dream Curtains work well alongside zebra blinds in the same home?', 'Yes — a common combination is <a href="' . esc_url( home_url( '/zebra-blinds/' ) ) . '">zebra blinds</a> on standard windows for adjustable daylight, paired with Dream Curtains on a patio door or tall window where walk-through access and a softer look matter more.' ),
 			),
 		),
 		'motorized-blinds' => array(
@@ -177,7 +179,7 @@ function highend_render_product_page( $key ) {
 			<?php foreach ( $p['features'] as $f ) : ?>
 				<div style="background:#fff;border:1px solid #E8DFD0;border-radius:16px;padding:22px">
 					<h2 style="font-size:18px;font-weight:700;color:#151515;margin:0"><?php echo esc_html( $f[0] ); ?></h2>
-					<p style="margin-top:10px;font-size:16.5px;font-weight:500;line-height:1.65;color:#151515"><?php echo esc_html( $f[1] ); ?></p>
+					<p style="margin-top:10px;font-size:16.5px;font-weight:500;line-height:1.65;color:#151515"><?php echo wp_kses_post( $f[1] ); ?></p>
 				</div>
 			<?php endforeach; ?>
 		</div>
@@ -189,7 +191,7 @@ function highend_render_product_page( $key ) {
 				<?php foreach ( $p['faqs'] as $f ) : ?>
 					<details class="hb-faq-item" style="background:#FAF8F3;border:1px solid #E8DFD0;border-radius:14px;padding:18px 20px">
 						<summary style="cursor:pointer;list-style:none;font-weight:700;font-size:15px;color:#151515;display:flex;align-items:center;justify-content:space-between;gap:16px"><span><?php echo esc_html( $f[0] ); ?></span><svg class="hb-faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
-						<p style="margin-top:10px;font-size:16px;font-weight:500;line-height:1.65;color:#151515"><?php echo esc_html( $f[1] ); ?></p>
+						<p style="margin-top:10px;font-size:16px;font-weight:500;line-height:1.65;color:#151515"><?php echo wp_kses_post( $f[1] ); ?></p>
 					</details>
 				<?php endforeach; ?>
 			</div>
