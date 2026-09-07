@@ -180,9 +180,9 @@ $reviews = array(
 				<div class="eyebrow">Limited Time Offer</div>
 				<h2>Up to 50% OFF Custom Blinds</h2>
 				<p>Book your free in-home estimate today and upgrade your windows with premium custom blinds.</p>
-				<a class="btn btn--white" style="align-self:flex-start" href="<?php echo esc_url( $contact ); ?>" onclick="event.preventDefault();hbOpenEstimate();">Claim Free Estimate <?php highend_arrow(); ?></a>
+				<a class="btn btn--white" style="align-self:flex-start" href="<?php echo esc_url( $contact ); ?>">Claim Free Estimate <?php highend_arrow(); ?></a>
 			</div>
-			<div class="pic" onclick="hbOpenEstimate()" style="cursor:pointer"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/offer-1.jpg' ); ?>" alt="Premium custom blinds" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+			<a class="pic" href="<?php echo esc_url( $contact ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/offer-1.jpg' ); ?>" alt="Premium custom blinds" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></a>
 		</div>
 	</div>
 </section>
