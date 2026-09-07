@@ -17,7 +17,7 @@ if ( ! defined( 'HIGHEND_NAME' ) )   { define( 'HIGHEND_NAME', 'HighEnd Blinds I
  */
 function highend_seo_data() {
 	return array(
-		'home'               => array( 'Custom Blinds Edmonton | Zebra, Roller & Motorized Blinds | HighEnd Blinds', 'Locally made custom blinds in Edmonton. Explore zebra blinds, roller blinds, motorized blinds, and light-filtering Dream Curtains with privacy. Free in-home consultation and professional installation.' ),
+		'home'               => array( 'Custom Blinds Edmonton | Zebra, Roller & Motorized Blinds | HighEnd Blinds', 'Custom blinds Edmonton homeowners trust — locally made zebra blinds, roller blinds, motorized blinds, and light-filtering Dream Curtains with privacy. Free in-home consultation and professional installation.' ),
 		'zebra-blinds'       => array( 'Zebra Blinds Edmonton | HighEnd Blinds', 'Zebra blinds Edmonton homeowners trust — custom made with professional measurement, installation, light control, privacy, and motorized options.' ),
 		'roller-blinds'      => array( 'Roller Blinds Edmonton | HighEnd Blinds', 'Roller blinds Edmonton homeowners trust — custom roller shades including blackout, sunscreen, privacy, cordless, and motorized options.' ),
 		'curtains'           => array( 'Long Curtains Edmonton | HighEnd Blinds', 'Long curtains Edmonton homeowners choose for tall windows and patio doors — floor-to-ceiling Dream Curtains with light filtering, privacy, and motorized operation, custom measured and professionally installed.' ),
