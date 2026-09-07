@@ -46,7 +46,7 @@ get_header();
 					<div style="font-size:14px;color:#3a352d"><strong>HighEnd Blinds Inc.</strong><br><?php echo esc_html( HIGHEND_ADDR ); ?></div>
 					<div><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9]/', '', HIGHEND_PHONE ) ); ?>" style="font-size:14px;color:#3a352d;font-weight:600"><?php echo esc_html( HIGHEND_PHONE ); ?></a></div>
 					<div><a href="mailto:<?php echo esc_attr( HIGHEND_EMAIL ); ?>" style="font-size:14px;color:#3a352d;font-weight:600"><?php echo esc_html( HIGHEND_EMAIL ); ?></a></div>
-					<div style="font-size:14px;color:#3a352d;line-height:1.7">Mon – Fri: 9:00 AM – 6:00 PM<br>Sat: 12:00 PM – 4:00 PM<br>Sun: Closed</div>
+					<div style="font-size:14px;color:#3a352d;line-height:1.7">Mon – Fri: 10:00 AM – 6:30 PM<br>Sat: 12:00 PM – 4:00 PM<br>Sun: Closed</div>
 				</div>
 				<div style="position:relative;border-radius:14px;overflow:hidden;border:1px solid #E8DFD0;aspect-ratio:16/9">
 					<iframe title="HighEnd Blinds location on Google Maps" src="https://maps.google.com/maps?q=3261+Parsons+Rd+NW+Edmonton+AB&z=14&output=embed" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
