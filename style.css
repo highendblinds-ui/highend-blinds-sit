@@ -51,7 +51,7 @@ input,select,textarea{font-family:var(--font-body)}
 .hb-topbar .hb-social{display:flex;align-items:center;gap:16px}
 .hb-topbar .hb-social a{color:var(--muted);display:flex}
 .hb-topbar .hb-social a:hover{color:var(--primary)}
-.hb-topbar .hb-rating{font-size:14.5px}
+.hb-topbar .hb-rating{font-size:14.5px;color:var(--ink)}
 .hb-topbar .hb-social a.hb-tb-phone{color:var(--ink)}
 
 /* header */
@@ -184,10 +184,10 @@ input,select,textarea{font-family:var(--font-body)}
 .hb-reviews{background:var(--bg);border-top:1px solid var(--border)}
 .hb-rate{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 0 38px;font-size:14px;color:var(--muted)}
 .hb-rate .stars{color:var(--primary);display:inline-flex;gap:1px}
-.hb-reviews-viewport{overflow:hidden;width:100%}
-.hb-reviews-track{display:flex;gap:22px;text-align:left;width:max-content;animation:hb-reviews-scroll 30s linear infinite}
-.hb-reviews-viewport:hover .hb-reviews-track{animation-play-state:paused}
-@keyframes hb-reviews-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hb-reviews-viewport{overflow-x:auto;overflow-y:hidden;width:100%;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;cursor:grab}
+.hb-reviews-viewport::-webkit-scrollbar{display:none}
+.hb-reviews-viewport.hb-dragging{cursor:grabbing}
+.hb-reviews-track{display:flex;gap:22px;text-align:left;width:max-content}
 .hb-review{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;flex:0 0 340px;width:340px}
 .hb-review .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .hb-review .who{display:flex;align-items:center;gap:10px}

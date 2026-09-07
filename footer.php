@@ -72,6 +72,69 @@
 	<svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.2-.4.2-.7.1-.9-.4-1.9-1-2.7-1.9-.7-.8-1.2-1.6-1.5-2.2-.1-.2 0-.4.1-.6.2-.2.4-.5.6-.7.2-.2.2-.4.1-.6-.1-.2-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1.1-1.1 2.6 0 1.6 1.1 3.1 1.3 3.3.2.2 2.2 3.4 5.4 4.6 2.7 1 3.2.8 3.8.7.6-.1 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.9-3.1-.2-.3C4 15 3.6 13.5 3.6 12 3.6 7.4 7.4 3.6 12 3.6S20.4 7.4 20.4 12 16.6 20.3 12 20.3z"></path></svg>
 </a>
 
+<!-- FREE ESTIMATE POPUP (shared) -->
+<div id="hb-estimate-modal" class="hb-estimate-modal" onclick="if(event.target===this){hbCloseEstimate();}">
+	<div class="hb-estimate-box">
+		<button type="button" class="hb-estimate-close" onclick="hbCloseEstimate()" aria-label="Close">&times;</button>
+		<h2>Get Your Free Estimate Today</h2>
+		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+			<input type="hidden" name="action" value="highend_estimate">
+			<input type="hidden" name="redirect_to" value="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">
+			<?php wp_nonce_field( 'highend_estimate', 'highend_nonce' ); ?>
+			<div class="hb-estimate-row">
+				<input type="text" name="fullname" aria-label="Full name" placeholder="Full Name" required>
+				<input type="tel" name="phone" aria-label="Phone number" placeholder="Phone Number">
+			</div>
+			<div class="hb-estimate-row">
+				<input type="email" name="email" aria-label="Email address" placeholder="Email Address" required>
+				<select name="interest" aria-label="Product interest">
+					<option>I'm interested in...</option>
+					<option>Zebra Blinds</option>
+					<option>Roller Blinds</option>
+					<option>Motorized Blinds</option>
+					<option>Dream Curtains</option>
+					<option>Motorized Curtains</option>
+				</select>
+			</div>
+			<textarea name="message" aria-label="Message" placeholder="Message" rows="3"></textarea>
+			<button type="submit" class="hb-estimate-submit">Submit</button>
+		</form>
+		<p class="hb-estimate-privacy">We respect your privacy. Your details are only used to prepare your estimate.</p>
+	</div>
+</div>
+
+<style>
+.hb-estimate-modal{display:none;position:fixed;inset:0;background:rgba(21,21,21,.6);z-index:9999;align-items:center;justify-content:center;padding:20px}
+.hb-estimate-modal.open{display:flex}
+.hb-estimate-box{position:relative;background:#FAF8F3;border:1px solid #E8DFD0;border-radius:18px;padding:32px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto}
+.hb-estimate-box h2{font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;margin:0 0 20px;color:#151515}
+.hb-estimate-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:28px;line-height:1;cursor:pointer;color:#151515}
+.hb-estimate-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-bottom:14px}
+.hb-estimate-box input,.hb-estimate-box select,.hb-estimate-box textarea{width:100%;min-width:0;border:1px solid #E8DFD0;border-radius:12px;padding:0 14px;font-size:14px;background:#fff;outline:none;font-family:inherit}
+.hb-estimate-box input,.hb-estimate-box select{height:48px}
+.hb-estimate-box textarea{padding:12px 14px;resize:vertical;margin-bottom:16px}
+.hb-estimate-submit{width:100%;display:inline-flex;align-items:center;justify-content:center;background:#C9973E;color:#fff;font-weight:700;font-size:15px;padding:14px;border:none;border-radius:12px;cursor:pointer}
+.hb-estimate-privacy{font-size:11.5px;color:#9a9384;margin:12px 0 0;text-align:center}
+@media (max-width:480px){.hb-estimate-row{grid-template-columns:1fr}}
+</style>
+
+<script>
+function hbOpenEstimate(){
+	document.getElementById('hb-estimate-modal').classList.add('open');
+	document.body.style.overflow = 'hidden';
+}
+function hbCloseEstimate(){
+	document.getElementById('hb-estimate-modal').classList.remove('open');
+	document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){
+	if(e.key === 'Escape'){
+		var modal = document.getElementById('hb-estimate-modal');
+		if(modal && modal.classList.contains('open')) hbCloseEstimate();
+	}
+});
+</script>
+
 <!-- GALLERY LIGHTBOX (shared, powers homepage preview + full gallery page) -->
 <?php $hb_gallery_images = function_exists( 'highend_gallery_images' ) ? highend_gallery_images() : array(); ?>
 <?php if ( ! empty( $hb_gallery_images ) ) : ?>

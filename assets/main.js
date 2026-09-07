@@ -97,3 +97,77 @@
 		document.querySelectorAll('[data-hb-carousel]').forEach(initCarousel);
 	});
 })();
+
+/* HighEnd Blinds — reviews strip: auto-scroll + native drag/swipe */
+(function () {
+	document.addEventListener('DOMContentLoaded', function () {
+		var viewport = document.querySelector('.hb-reviews-viewport');
+		var track = document.querySelector('.hb-reviews-track');
+		if (!viewport || !track) return;
+
+		var isInteracting = false;
+		var resumeTimer = null;
+
+		function halfWidth() { return track.scrollWidth / 2; }
+
+		function normalizeScroll() {
+			var hw = halfWidth();
+			if (hw <= 0) return;
+			if (viewport.scrollLeft >= hw) viewport.scrollLeft -= hw;
+			else if (viewport.scrollLeft < 0) viewport.scrollLeft += hw;
+		}
+		viewport.addEventListener('scroll', normalizeScroll, { passive: true });
+
+		function pause() {
+			isInteracting = true;
+			if (resumeTimer) { clearTimeout(resumeTimer); resumeTimer = null; }
+		}
+		function resumeSoon(delay) {
+			if (resumeTimer) clearTimeout(resumeTimer);
+			resumeTimer = setTimeout(function () { isInteracting = false; }, delay);
+		}
+
+		viewport.addEventListener('mouseenter', pause);
+		viewport.addEventListener('mouseleave', function () { resumeSoon(0); });
+		viewport.addEventListener('touchstart', pause, { passive: true });
+		viewport.addEventListener('touchend', function () { resumeSoon(2000); }, { passive: true });
+
+		// Mouse drag-to-scroll (touch already scrolls natively via overflow-x:auto)
+		var isDragging = false, dragStartX = 0, dragStartScroll = 0;
+		viewport.addEventListener('mousedown', function (e) {
+			isDragging = true;
+			viewport.classList.add('hb-dragging');
+			dragStartX = e.clientX;
+			dragStartScroll = viewport.scrollLeft;
+			pause();
+		});
+		window.addEventListener('mousemove', function (e) {
+			if (!isDragging) return;
+			viewport.scrollLeft = dragStartScroll - (e.clientX - dragStartX);
+		});
+		window.addEventListener('mouseup', function () {
+			if (!isDragging) return;
+			isDragging = false;
+			viewport.classList.remove('hb-dragging');
+			resumeSoon(0);
+		});
+
+		var lastTime = null;
+		var speed = 0;
+		function computeSpeed() { speed = halfWidth() / 30; }
+		computeSpeed();
+		window.addEventListener('resize', computeSpeed);
+
+		function tick(now) {
+			if (lastTime === null) lastTime = now;
+			var dt = (now - lastTime) / 1000;
+			lastTime = now;
+			if (!isInteracting && !isDragging) {
+				viewport.scrollLeft += speed * dt;
+				normalizeScroll();
+			}
+			requestAnimationFrame(tick);
+		}
+		requestAnimationFrame(tick);
+	});
+})();
