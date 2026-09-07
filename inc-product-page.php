@@ -58,7 +58,7 @@ function highend_product_data() {
 		),
 		'curtains' => array(
 			'eyebrow' => 'Dream Curtains Edmonton',
-			'title' => 'Motorized Dream Curtains Edmonton — Light Filtering & Privacy',
+			'title' => 'Dream Curtains Edmonton — Light Filtering & Privacy',
 			'intro' => 'Our motorized Dream Curtains are light filtering with privacy — not blackout. They are custom measured, fabricated, and installed by our Edmonton team for open-to-above family rooms, deck and patio doors, and normal-height family-room windows.',
 			'img' => 'dream-curtain.jpg',
 			'features' => array(
