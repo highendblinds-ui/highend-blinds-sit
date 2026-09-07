@@ -5,15 +5,6 @@
  * needing the full wp-admin dashboard.
  */
 
-/** Routes gallery uploads into wp-content/uploads/highend-gallery/ instead of the
- *  default year/month folder, so highend_gallery_images() can find them easily -
- *  and, importantly, outside the theme's Git-deployed folder so they survive deploys. */
-function highend_gallery_upload_dir( $dirs ) {
-	$dirs['subdir'] = '/highend-gallery';
-	$dirs['path']   = $dirs['basedir'] . $dirs['subdir'];
-	$dirs['url']    = $dirs['baseurl'] . $dirs['subdir'];
-	return $dirs;
-}
 
 function highend_simple_admin_intercept() {
 	$path = trim( (string) wp_parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ), '/' );
@@ -62,11 +53,13 @@ function highend_simple_admin_intercept() {
 				$error = 'Please choose at least one photo to upload.';
 			} else {
 				require_once ABSPATH . 'wp-admin/includes/file.php';
-				$overrides = array( 'test_form' => false, 'mimes' => array( 'jpg|jpeg' => 'image/jpeg' ) );
-				$added     = array();
-				$failed    = array();
-				$count     = count( $_FILES['highend_gallery_file']['name'] );
-				add_filter( 'upload_dir', 'highend_gallery_upload_dir' );
+				$overrides   = array( 'test_form' => false, 'mimes' => array( 'jpg|jpeg' => 'image/jpeg' ) );
+				$uploads     = wp_upload_dir();
+				$gallery_dir = trailingslashit( $uploads['basedir'] ) . 'highend-gallery/';
+				wp_mkdir_p( $gallery_dir );
+				$added  = array();
+				$failed = array();
+				$count  = count( $_FILES['highend_gallery_file']['name'] );
 				for ( $i = 0; $i < $count; $i++ ) {
 					if ( empty( $_FILES['highend_gallery_file']['name'][ $i ] ) ) {
 						continue;
@@ -81,11 +74,15 @@ function highend_simple_admin_intercept() {
 					$moved = wp_handle_upload( $single, $overrides );
 					if ( isset( $moved['error'] ) ) {
 						$failed[] = $single['name'] . ' (' . $moved['error'] . ')';
+						continue;
+					}
+					$final_name = wp_unique_filename( $gallery_dir, basename( $moved['file'] ) );
+					if ( @rename( $moved['file'], $gallery_dir . $final_name ) ) {
+						$added[] = $final_name;
 					} else {
-						$added[] = basename( $moved['file'] );
+						$failed[] = $single['name'] . ' (could not move into gallery folder)';
 					}
 				}
-				remove_filter( 'upload_dir', 'highend_gallery_upload_dir' );
 				if ( $added ) {
 					$notice = count( $added ) . ' photo(s) added to the gallery: ' . esc_html( implode( ', ', $added ) ) . '.';
 				}
