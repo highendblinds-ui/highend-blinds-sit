@@ -296,6 +296,20 @@ function highend_gallery_images() {
 }
 
 /**
+ * Derives descriptive alt text from a gallery image's filename (e.g.
+ * "zebra-blinds-close-up-edmonton.jpg" -> "Zebra blinds close up edmonton").
+ * Falls back to a generic description for camera-original or theme-bundled
+ * filenames that were never given a real name via the /admin rename tool.
+ */
+function highend_gallery_alt( $url, $index ) {
+	$base = pathinfo( wp_parse_url( $url, PHP_URL_PATH ), PATHINFO_FILENAME );
+	if ( preg_match( '/^(gallery-\d+|img[-_]?\d+.*)$/i', $base ) ) {
+		return 'HighEnd Blinds custom window covering installation in Edmonton — photo ' . ( $index + 1 );
+	}
+	return ucfirst( trim( preg_replace( '/\s+/', ' ', str_replace( array( '-', '_' ), ' ', $base ) ) ) );
+}
+
+/**
  * Handle the estimate/contact form submission — emails the lead and redirects back.
  */
 function highend_handle_estimate_form() {

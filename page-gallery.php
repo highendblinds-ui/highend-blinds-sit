@@ -12,7 +12,7 @@ get_header();
 			<?php $hb_gallery_photos = highend_gallery_images(); ?>
 			<?php foreach ( $hb_gallery_photos as $hb_gi => $src ) : ?>
 				<a href="<?php echo esc_url( $src ); ?>" data-gallery="hb-gallery" onclick="event.preventDefault();hbOpenGallery(<?php echo (int) $hb_gi; ?>);" class="cell" style="display:block;border-radius:12px;overflow:hidden;aspect-ratio:1/1">
-					<img src="<?php echo esc_url( $src ); ?>" alt="HighEnd Blinds installation photo <?php echo esc_attr( $hb_gi + 1 ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+					<img src="<?php echo esc_url( $src ); ?>" alt="<?php echo esc_attr( highend_gallery_alt( $src, $hb_gi ) ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
 				</a>
 			<?php endforeach; ?>
 		</div>

@@ -135,7 +135,7 @@ $reviews = array(
 			<?php for ( $i = 1; $i <= 6; $i++ ) :
 				$gsrc = get_template_directory_uri() . '/assets/images/gallery-' . str_pad( $i, 2, '0', STR_PAD_LEFT ) . '.jpg';
 				?>
-				<div class="cell" onclick="hbOpenGallery(<?php echo (int) ( $i - 1 ); ?>)" style="cursor:pointer"><img src="<?php echo esc_url( $gsrc ); ?>" alt="HighEnd Blinds project photo <?php echo esc_attr( $i ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+				<div class="cell" onclick="hbOpenGallery(<?php echo (int) ( $i - 1 ); ?>)" style="cursor:pointer"><img src="<?php echo esc_url( $gsrc ); ?>" alt="<?php echo esc_attr( highend_gallery_alt( $gsrc, $i - 1 ) ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 			<?php endfor; ?>
 		</div>
 		<div style="display:flex;justify-content:center;margin-top:36px">
