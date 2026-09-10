@@ -92,6 +92,7 @@ function highend_product_data() {
 				array( 'Do long curtains work for two-storey great rooms?', "Yes — long curtains are one of our most requested solutions for Edmonton's two-storey great rooms and open-to-above windows, giving full-height coverage that a standard-length curtain or blind can't reach." ),
 				array( 'How much do long curtains cost in Edmonton?', 'Pricing for long curtains depends on the height and width of the track, fabric choice, and motorization. Because we measure, fabricate, and install locally in Edmonton, our factory-direct pricing is typically well below imported long-curtain alternatives.' ),
 				array( 'Do Dream Curtains work well alongside zebra blinds in the same home?', 'Yes — a common combination is <a href="' . esc_url( home_url( '/zebra-blinds/' ) ) . '">zebra blinds</a> on standard windows for adjustable daylight, paired with Dream Curtains on a patio door or tall window where walk-through access and a softer look matter more.' ),
+				array( 'Where can I find curtains in Edmonton?', 'HighEnd Blinds manufactures and installs curtains in Edmonton at our own Parsons Road facility — from motorized Dream Curtains for patio doors to long, floor-to-ceiling curtains for tall windows and great rooms. Every curtain is measured, sewn, and installed locally, with factory-direct pricing.' ),
 			),
 		),
 		'motorized-blinds' => array(
