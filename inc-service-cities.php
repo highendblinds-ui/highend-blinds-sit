@@ -98,7 +98,7 @@ function highend_render_service_city( $key ) {
 			<p><?php echo esc_html( $c['fit'] ); ?></p>
 
 			<h2>Custom Blinds and Motorized Options</h2>
-			<p><?php echo esc_html( $c['products'] ); ?> Learn more about our <a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>">zebra blinds</a>, <a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>">roller blinds</a>, and <a href="<?php echo esc_url( home_url( '/motorized-blinds/' ) ); ?>">motorized blinds</a>.</p>
+			<p><?php echo esc_html( $c['products'] ); ?> Learn more about our <a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>">zebra blinds</a>, <a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>">roller blinds</a>, <a href="<?php echo esc_url( home_url( '/curtains/' ) ); ?>">curtains</a>, <a href="<?php echo esc_url( home_url( '/motorized-blinds/' ) ); ?>">motorized blinds</a>, and <a href="<?php echo esc_url( home_url( '/motorized-curtains/' ) ); ?>">motorized curtains</a>.</p>
 
 			<h2>Our Measurement, Manufacturing, and Installation Process</h2>
 			<p><?php echo esc_html( $c['process'] ); ?></p>
