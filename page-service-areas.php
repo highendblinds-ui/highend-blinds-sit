@@ -19,7 +19,7 @@ $areas = array(
 	<div class="hb-wrap" style="padding-top:58px;padding-bottom:58px;text-align:center;max-width:920px">
 		<div class="eyebrow">Edmonton &amp; Surrounding Communities</div>
 		<h1 style="font-size:clamp(2.1rem,4.5vw,3.4rem);line-height:1.08">Custom Blinds Measurement &amp; Installation Service Areas</h1>
-		<p style="max-width:720px;margin:20px auto 0;color:#625E57;font-size:17px;line-height:1.7">HighEnd Blinds provides free in-home consultations, precise measurement, local manufacturing, and professional installation throughout Edmonton and nearby communities.</p>
+		<p style="max-width:720px;margin:20px auto 0;color:#625E57;font-size:17px;line-height:1.7">HighEnd Blinds provides free in-home consultations, precise measurement, local manufacturing, and professional installation of <a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>">custom Zebra Blinds Edmonton</a> and <a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>">custom roller shades</a> throughout Edmonton and nearby communities.</p>
 		<div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px">
 			<a class="btn btn--primary" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">Book Free Consultation <?php highend_arrow(); ?></a>
 			<a class="btn btn--outline" href="tel:<?php echo esc_attr( preg_replace( '/[^0-9]/', '', HIGHEND_PHONE ) ); ?>">Call <?php echo esc_html( HIGHEND_PHONE ); ?></a>
@@ -63,8 +63,8 @@ $areas = array(
 			</div>
 		</div>
 		<nav aria-label="Explore our products" style="margin-top:34px;padding-top:26px;border-top:1px solid #E4D8C2;display:flex;justify-content:center;flex-wrap:wrap;gap:12px 24px;font-weight:700">
-			<a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>">Zebra Blinds</a>
-			<a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>">Roller Blinds</a>
+			<a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>">Custom Zebra Blinds Edmonton</a>
+			<a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>">Explore Roller Blinds</a>
 			<a href="<?php echo esc_url( home_url( '/motorized-blinds/' ) ); ?>">Motorized Blinds</a>
 			<a href="<?php echo esc_url( home_url( '/curtains/' ) ); ?>">Dream Curtains</a>
 			<a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>">Project Gallery</a>

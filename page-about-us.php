@@ -8,7 +8,7 @@ get_header();
 	<div class="hb-wrap" style="padding:64px 20px">
 		<div style="font-size:11.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#C9973E">About HighEnd Blinds</div>
 		<h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.1;margin-top:12px;max-width:26ch">Edmonton's own factory-direct blind maker</h1>
-		<p style="margin-top:18px;font-size:16px;line-height:1.7;color:#B9C2CE;max-width:62ch">For more than 12 years, we have designed, manufactured, and installed zebra blinds, roller blinds, dream curtains, and motorized window coverings — all made locally in Edmonton.</p>
+		<p style="margin-top:18px;font-size:16px;line-height:1.7;color:#B9C2CE;max-width:62ch">For more than 12 years, we have designed, manufactured, and installed <a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>" style="color:#fff;text-decoration:underline">custom Zebra Blinds Edmonton</a>, <a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>" style="color:#fff;text-decoration:underline">blackout and light-filtering roller blinds</a>, dream curtains, and motorized window coverings — all made locally in Edmonton.</p>
 	</div>
 </section>
 <section style="background:#F7F3EC">

@@ -10,11 +10,12 @@ $contact = home_url( '/contact-us/' );
 
 /* Product cards: title, permalink slug, description, image filename hint. */
 $products = array(
-	array( 'Zebra Blinds', '/zebra-blinds/', 'Stylish dual sheer shades that control light and privacy perfectly.', 'zebra-blinds.jpg' ),
-	array( 'Roller Blinds', '/roller-blinds/', 'Clean, modern, and functional roller blinds for every room.', 'roller-blinds.jpg' ),
-	array( 'Dream Curtains', '/curtains/', 'Motorized light-filtering curtains with privacy for patio doors and family rooms.', 'dream-curtain.jpg' ),
-	array( 'Motorized Blinds', '/motorized-blinds/', 'Smart motorized blinds for convenience, safety, and modern living.', 'motorized-blinds.jpg' ),
-	array( 'Motorized Dream Curtains', '/motorized-curtains/', 'Light-filtering privacy curtains for open-to-above rooms, patio doors, and family rooms.', 'motorized-curtains.jpg' ),
+	array( 'Zebra Blinds', '/zebra-blinds/', 'Stylish dual sheer shades that control light and privacy perfectly.', 'optimized/zebra-blinds.webp', 'Custom Zebra Blinds Edmonton' ),
+	array( 'Roller Blinds', '/roller-blinds/', 'Clean, modern, and functional roller blinds for every room.', 'optimized/roller-blinds.webp', 'Explore Roller Blinds' ),
+	array( 'Blackout Blinds', '/blackout-blinds-edmonton/', 'Room-darkening roller blinds for bedrooms, nurseries, media rooms and shift workers.', 'https://highendblinds.com/wp-content/uploads/2026/10/blackout-blinds-homepage.webp', 'Explore Blackout Blinds' ),
+	array( 'Dream Curtains', '/curtains/', 'Motorized light-filtering curtains with privacy for patio doors and family rooms.', 'optimized/dream-curtain.webp', 'Explore Dream Curtains' ),
+	array( 'Motorized Blinds', '/motorized-blinds/', 'Smart motorized blinds for convenience, safety, and modern living.', 'optimized/motorized-blinds.webp', 'Explore Motorized Blinds' ),
+	array( 'Motorized Dream Curtains', '/motorized-curtains/', 'Light-filtering privacy curtains for open-to-above rooms, patio doors, and family rooms.', 'optimized/motorized-curtains.webp', 'Explore Motorized Curtains' ),
 );
 
 $why = array(
@@ -42,7 +43,7 @@ $reviews = array(
 		<div>
 			<div class="eyebrow">Made in Edmonton</div>
 			<h1>Custom Blinds Edmonton — Curtains &amp; Motorized Window Coverings</h1>
-			<p class="lead">Premium zebra blinds, roller blinds, motorized blinds, and curtains — measured, made, and installed locally in Edmonton.</p>
+			<p class="lead">Premium <a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>">custom Zebra Blinds Edmonton</a>, <a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>">blackout and light-filtering roller blinds</a>, motorized blinds, and curtains — measured, made, and installed locally in Edmonton.</p>
 			<div class="hb-hero-cta">
 				<a class="btn btn--primary" href="<?php echo esc_url( $contact ); ?>">Book Free Estimate <?php highend_arrow(); ?></a>
 				<a class="btn btn--outline" href="#products">View Products</a>
@@ -65,12 +66,12 @@ $reviews = array(
 				<?php else : ?>
 					<?php
 					$hero_slides = array(
-						array( 'hero-5.png', 'Motorized Dream Curtains', 'Light-filtering privacy for open-to-above rooms, patio doors, and family rooms.' ),
-						array( 'hero-6.png', 'Zebra Blinds', 'Enjoy natural light and privacy with one modern blind.' ),
-						array( 'hero-1.png', 'Custom Zebra Blinds', 'Made to fit your windows perfectly.' ),
-						array( 'hero-2.png', 'Zebra Blinds for Modern Homes', 'Stylish light control with manual or motorized options.' ),
-						array( 'hero-3.png', 'Light-Filtering Roller Blinds', 'Softens sunlight while keeping your room bright and comfortable.' ),
-						array( 'hero-7.png', 'Custom Roller Blinds', 'Clean, practical window coverings made in Edmonton.' ),
+						array( 'optimized/hero-5.webp', 'Motorized Dream Curtains', 'Light-filtering privacy for open-to-above rooms, patio doors, and family rooms.' ),
+						array( 'optimized/hero-6.webp', 'Zebra Blinds', 'Enjoy natural light and privacy with one modern blind.' ),
+						array( 'optimized/hero-1.webp', 'Custom Zebra Blinds', 'Made to fit your windows perfectly.' ),
+						array( 'optimized/hero-2.webp', 'Zebra Blinds for Modern Homes', 'Stylish light control with manual or motorized options.' ),
+						array( 'optimized/hero-3.webp', 'Light-Filtering Roller Blinds', 'Softens sunlight while keeping your room bright and comfortable.' ),
+						array( 'optimized/hero-7.webp', 'Custom Roller Blinds', 'Clean, practical window coverings made in Edmonton.' ),
 					);
 					foreach ( $hero_slides as $slide ) : ?>
 						<div class="hb-slide">
@@ -95,11 +96,11 @@ $reviews = array(
 		<div class="hb-cards">
 			<?php foreach ( $products as $p ) : ?>
 				<a class="hb-card" href="<?php echo esc_url( home_url( $p[1] ) ); ?>">
-					<div class="thumb"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . $p[3] ); ?>" alt="<?php echo esc_attr( $p[0] ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+					<div class="thumb"><img src="<?php echo esc_url( ( 0 === strpos( $p[3], 'http' ) ? $p[3] : get_template_directory_uri() . '/assets/images/' . $p[3] ) ); ?>" alt="<?php echo esc_attr( $p[0] ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 					<div class="body">
 						<div class="title"><?php echo esc_html( $p[0] ); ?></div>
 						<div class="desc"><?php echo esc_html( $p[2] ); ?></div>
-						<span class="hb-learn">Learn More <?php highend_arrow(); ?></span>
+						<span class="hb-learn"><?php echo esc_html( $p[4] ); ?> <?php highend_arrow(); ?></span>
 					</div>
 				</a>
 			<?php endforeach; ?>
@@ -138,6 +139,7 @@ $reviews = array(
 				<div class="cell" onclick="hbOpenGallery(<?php echo (int) ( $i - 1 ); ?>)" style="cursor:pointer"><img src="<?php echo esc_url( $gsrc ); ?>" alt="<?php echo esc_attr( highend_gallery_alt( $gsrc, $i - 1 ) ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 			<?php endfor; ?>
 		</div>
+		<p style="max-width:760px;margin:24px auto 0;color:#625E57;line-height:1.7">Compare real Edmonton installations, then explore our <a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>"><strong>custom Zebra Blinds Edmonton</strong></a> and <a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>"><strong>blackout and light-filtering roller blinds</strong></a>.</p>
 		<div style="display:flex;justify-content:center;margin-top:36px">
 			<a class="btn btn--outline" href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>">View Full Gallery <?php highend_arrow(); ?></a>
 		</div>
@@ -151,7 +153,7 @@ $reviews = array(
 			<div class="eyebrow">Your Local Edmonton Blind Maker</div>
 			<h2>Custom Window Coverings Made for Edmonton Homes</h2>
 			<p>For more than 12 years, HighEnd Blinds has helped Edmonton homeowners and businesses improve privacy, comfort, and light control. We measure every window carefully, make each order locally, and professionally install the finished window coverings.</p>
-			<p>Our zebra blinds, roller blinds, dream curtains, and motorized systems are custom-built for your windows—not taken from standard store sizes. Thousands of satisfied clients have trusted our local team for practical advice, quality workmanship, and responsive after-sale service.</p>
+			<p>Our <a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>">custom zebra blinds</a>, <a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>">roller blinds and roller shades</a>, dream curtains, and motorized systems are custom-built for your windows—not taken from standard store sizes. Thousands of satisfied clients have trusted our local team for practical advice, quality workmanship, and responsive after-sale service.</p>
 		</div>
 		<div class="hb-proof-grid" aria-label="HighEnd Blinds experience">
 			<div><strong>12+</strong><span>Years in the blinds business</span></div>
@@ -185,7 +187,7 @@ $reviews = array(
 			<div><h3>Long Summer Daylight</h3><p>Light-filtering and sunscreen fabrics reduce glare and harsh sunlight while helping rooms stay bright and comfortable.</p></div>
 			<div><h3>Bedroom Darkness</h3><p>Blackout roller blinds provide stronger room darkening for bedrooms, nurseries, media rooms, and shift workers.</p></div>
 			<div><h3>Cold Alberta Winters</h3><p>Properly fitted window coverings add privacy and help create a more comfortable barrier at the window during cold weather.</p></div>
-			<div><h3>Tall or Hard-to-Reach Windows</h3><p>Motorized blinds and curtains make high windows easy to operate with a remote, app, or compatible smart-home controls.</p></div>
+			<div><h3>Tall or Hard-to-Reach Windows</h3><p>Motorized blinds can use compatible remote or smart controls, while our motorized curtains operate by handheld remote.</p></div>
 		</div>
 	</div>
 </section>

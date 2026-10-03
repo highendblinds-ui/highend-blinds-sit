@@ -13,7 +13,7 @@ get_header();
 <section style="background:#F7F3EC">
 	<div class="hb-wrap" style="padding:54px 20px 70px;max-width:980px">
 		<div style="background:#fff;border:1px solid #E8DFD0;border-radius:20px;padding:clamp(24px,4vw,42px);box-shadow:0 16px 45px rgba(40,31,20,.07)">
-			<p style="font-size:16px;line-height:1.75;color:#3a352d;margin:0 0 28px">Every custom blind or curtain is built to the exact size of your window, so accurate measurement matters. Below are our measuring instructions by mount type. We still recommend a free in-home measurement before ordering — our team takes all required manufacturing allowances for you.</p>
+			<p style="font-size:16px;line-height:1.75;color:#3a352d;margin:0 0 28px">Every custom blind or curtain is built to the exact size of your window, so accurate measurement matters. These instructions apply when planning <a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>">custom zebra blinds</a> and <a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>">blackout, light-filtering, or sunscreen roller blinds</a>. We still recommend a free in-home measurement before ordering — our team takes all required manufacturing allowances for you.</p>
 
 			<div style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;margin-bottom:36px">
 				<svg width="164" height="190" viewBox="-14 0 164 190" role="img" aria-label="Inside mount window measurement diagram showing three width and three height measurement points" style="flex-shrink:0">
