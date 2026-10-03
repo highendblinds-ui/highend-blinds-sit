@@ -16,6 +16,7 @@ get_header();
 				</a>
 			<?php endforeach; ?>
 		</div>
+		<p style="max-width:760px;margin:30px auto 0;color:#625E57;line-height:1.7">Planning a wide sliding opening? Explore our <a href="<?php echo esc_url( home_url( '/patio-door-blinds-curtains-edmonton/' ) ); ?>"><strong>patio door blinds and curtains in Edmonton</strong></a>, including Dream Curtains, split roller blinds and remote-controlled options.</p>
 	</div>
 </section>
 <?php get_footer(); ?>

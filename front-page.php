@@ -139,7 +139,7 @@ $reviews = array(
 				<div class="cell" onclick="hbOpenGallery(<?php echo (int) ( $i - 1 ); ?>)" style="cursor:pointer"><img src="<?php echo esc_url( $gsrc ); ?>" alt="<?php echo esc_attr( highend_gallery_alt( $gsrc, $i - 1 ) ); ?>" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 			<?php endfor; ?>
 		</div>
-		<p style="max-width:760px;margin:24px auto 0;color:#625E57;line-height:1.7">Compare real Edmonton installations, then explore our <a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>"><strong>custom Zebra Blinds Edmonton</strong></a> and <a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>"><strong>blackout and light-filtering roller blinds</strong></a>.</p>
+		<p style="max-width:800px;margin:24px auto 0;color:#625E57;line-height:1.7">Compare real Edmonton installations, then explore our <a href="<?php echo esc_url( home_url( '/zebra-blinds/' ) ); ?>"><strong>custom Zebra Blinds Edmonton</strong></a>, <a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>"><strong>blackout and light-filtering roller blinds</strong></a>, and <a href="<?php echo esc_url( home_url( '/patio-door-blinds-curtains-edmonton/' ) ); ?>"><strong>patio door blinds and curtains</strong></a>.</p>
 		<div style="display:flex;justify-content:center;margin-top:36px">
 			<a class="btn btn--outline" href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>">View Full Gallery <?php highend_arrow(); ?></a>
 		</div>

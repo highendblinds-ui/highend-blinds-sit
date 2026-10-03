@@ -23,8 +23,8 @@ while ( have_posts() ) : the_post();
 		$related_product_links = array(
 			'zebra-blinds-vs-roller-blinds-edmonton' => 'Compare our <a href="' . esc_url( home_url( '/zebra-blinds/' ) ) . '">custom Zebra Blinds Edmonton</a> with <a href="' . esc_url( home_url( '/roller-blinds/' ) ) . '">custom roller shades</a>, including privacy, light-filtering, blackout, and motorized options.',
 			'vertical-blinds-vs-zebra-blinds-edmonton-guide' => 'See colours, band sizes, privacy options, and motor choices on our <a href="' . esc_url( home_url( '/zebra-blinds/' ) ) . '">custom Zebra Blinds Edmonton</a> page.',
-			'blackout-blinds-what-actually-blocks-light' => 'Compare fabric and mounting choices on our <a href="' . esc_url( home_url( '/roller-blinds/' ) ) . '">blackout and light-filtering roller blinds</a> page.',
-			'light-filtering-vs-blackout-blinds-edmonton' => 'Explore <a href="' . esc_url( home_url( '/roller-blinds/' ) ) . '">blackout and light-filtering roller blinds</a>, or compare them with adjustable <a href="' . esc_url( home_url( '/zebra-blinds/' ) ) . '">zebra blinds for Edmonton homes</a>.',
+			'blackout-blinds-what-actually-blocks-light' => 'Compare fabric and mounting choices on our <a href="' . esc_url( home_url( '/roller-blinds/' ) ) . '">blackout and light-filtering roller blinds</a> page, including options for <a href="' . esc_url( home_url( '/patio-door-blinds-curtains-edmonton/' ) ) . '">large sliding and patio doors</a>.',
+			'light-filtering-vs-blackout-blinds-edmonton' => 'Explore <a href="' . esc_url( home_url( '/roller-blinds/' ) ) . '">blackout and light-filtering roller blinds</a>, compare them with adjustable <a href="' . esc_url( home_url( '/zebra-blinds/' ) ) . '">zebra blinds for Edmonton homes</a>, or review <a href="' . esc_url( home_url( '/patio-door-blinds-curtains-edmonton/' ) ) . '">patio door curtains and blinds</a> for wider openings.',
 		);
 		$article_slug = get_post_field( 'post_name', get_the_ID() );
 		if ( isset( $related_product_links[ $article_slug ] ) ) :

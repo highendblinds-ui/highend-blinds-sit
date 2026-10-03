@@ -67,6 +67,7 @@ $areas = array(
 			<a href="<?php echo esc_url( home_url( '/roller-blinds/' ) ); ?>">Explore Roller Blinds</a>
 			<a href="<?php echo esc_url( home_url( '/motorized-blinds/' ) ); ?>">Motorized Blinds</a>
 			<a href="<?php echo esc_url( home_url( '/curtains/' ) ); ?>">Dream Curtains</a>
+			<a href="<?php echo esc_url( home_url( '/patio-door-blinds-curtains-edmonton/' ) ); ?>">Patio Door Blinds &amp; Curtains</a>
 			<a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>">Project Gallery</a>
 		</nav>
 	</div>

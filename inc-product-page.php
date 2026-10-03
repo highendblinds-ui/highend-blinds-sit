@@ -448,6 +448,9 @@ function highend_render_product_page( $key ) {
 			<nav aria-label="Related information" style="margin-top:28px;padding-top:24px;border-top:1px solid #E8DFD0;display:flex;flex-wrap:wrap;gap:10px 20px;font-size:14px;font-weight:700">
 				<a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>">View Edmonton installations</a>
 				<a href="<?php echo esc_url( home_url( '/service-areas/' ) ); ?>">See our service areas</a>
+				<?php if ( in_array( $key, array( 'curtains', 'motorized-curtains', 'roller-blinds' ), true ) ) : ?>
+					<a href="<?php echo esc_url( home_url( '/patio-door-blinds-curtains-edmonton/' ) ); ?>">Patio door blinds and curtains</a>
+				<?php endif; ?>
 				<a href="<?php echo esc_url( home_url( '/warranty/' ) ); ?>">Read our warranty</a>
 								<a href="<?php echo esc_url( home_url( '/how-to-measure-windows-for-custom-blinds/' ) ); ?>">Read our measurement guide</a>
 				<?php if ( 'motorized-blinds' === $key ) : ?>

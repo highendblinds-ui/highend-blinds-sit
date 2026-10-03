@@ -25,7 +25,7 @@ function highend_seo_data() {
 		'motorized-blinds'   => array( 'Motorized Blinds Edmonton | HighEnd Blinds', 'Motorized blinds Edmonton homeowners choose for smart, remote-control shades with rechargeable motors, app control, scheduling, and professional installation.' ),
 		'smart-blinds-edmonton' => array( 'Smart Blinds Edmonton | Delta & Somfy Motor Systems', 'Smart blinds installed in Edmonton using Delta and Somfy motors, with compatible remote, app, scheduling and voice-control options.' ),
 		'motorized-curtains' => array( 'Motorized Curtains Edmonton | Remote-Controlled Curtains', 'Motorized curtains Edmonton homeowners choose for light filtering and privacy, operated by handheld remote control and professionally installed.' ),
-		'patio-door-blinds-curtains-edmonton' => array( 'Patio Door Blinds & Curtains Edmonton | Custom Coverings', 'Custom patio door blinds and curtains in Edmonton, including Dream Curtains, roller blinds and remote-controlled motorized options.' ),
+		'patio-door-blinds-curtains-edmonton' => array( 'Patio Door Blinds & Curtains Edmonton | Custom Coverings', 'Custom patio door blinds and curtains in Edmonton. Explore Dream Curtains, roller blinds and remote-controlled motorized options with free measurement and professional installation.' ),
 		'about-us'           => array( 'About HighEnd Blinds Inc. | Edmonton', 'Meet HighEnd Blinds Inc., an Edmonton manufacturer and installer of custom blinds, shades, curtains, and motorized window coverings.' ),
 		'contact-us'         => array( 'Contact HighEnd Blinds Inc. | Edmonton', 'Contact HighEnd Blinds Inc. in Edmonton for a free in-home consultation, professional measurement, and custom window-covering estimate.' ),
 		'gallery'            => array( 'Custom Blinds Gallery | Edmonton Projects', 'View custom zebra blinds, roller blinds, curtains, and motorized window-covering installations completed across Edmonton and area.' ),
@@ -407,6 +407,7 @@ function highend_ensure_pages() {
 		array( 'Smart Blinds Edmonton', 'smart-blinds-edmonton', 'default' ),
 		array( 'Motorized Curtains', 'motorized-curtains', 'page-motorized-curtains.php' ),
 		array( 'Blackout Blinds Edmonton', 'blackout-blinds-edmonton', 'default' ),
+		array( 'Patio Door Blinds and Curtains Edmonton', 'patio-door-blinds-curtains-edmonton', 'page-patio-door-blinds-curtains-edmonton.php' ),
 		array( 'Blog', 'blog', 'page-blog.php' ),
 	);
 	foreach ( $pages as $p ) {
