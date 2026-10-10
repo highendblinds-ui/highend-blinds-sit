@@ -433,13 +433,39 @@ function highend_ensure_pages() {
 }
 add_action( 'init', 'highend_ensure_pages' );
 
-/** Preserve visitors and search signals from misspelled URLs used by the old site. */
-function highend_legacy_city_redirects() {
+/**
+ * Preserve visitors and search signals from URLs used by the old site and from
+ * superseded posts that overlap a stronger permanent service page.
+ */
+function highend_legacy_redirects() {
 	$path = trim( (string) wp_parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ), '/' );
-	$redirects = array( 'sheerwood-park' => 'sherwood-park', 'beamount' => 'beaumont', 'spruce-groove' => 'spruce-grove' );
+	$redirects = array(
+		'sheerwood-park'                                  => 'sherwood-park',
+		'beamount'                                        => 'beaumont',
+		'spruce-groove'                                   => 'spruce-grove',
+		'roller-shades'                                   => 'roller-blinds',
+		'motorization'                                    => 'motorized-blinds',
+		'measuring-guide'                                 => 'measurement-guide',
+		'sun-screen-blinds'                               => 'roller-blinds',
+		'custom-blinds-for-beaumont-ab-homes-highend-blinds' => 'beaumont',
+		'custom-blinds-for-beaumont-ab-homes'             => 'beaumont',
+	);
 	if ( isset( $redirects[ $path ] ) ) {
 		wp_safe_redirect( home_url( '/' . $redirects[ $path ] . '/' ), 301 );
 		exit;
 	}
 }
-add_action( 'template_redirect', 'highend_legacy_city_redirects', 1 );
+add_action( 'template_redirect', 'highend_legacy_redirects', 1 );
+
+/** Keep superseded Beaumont articles out of Rank Math's XML sitemap. */
+function highend_rank_math_sitemap_entry( $url, $type, $object ) {
+	$slugs = array(
+		'custom-blinds-for-beaumont-ab-homes-highend-blinds',
+		'custom-blinds-for-beaumont-ab-homes',
+	);
+	if ( 'post' === $type && $object instanceof WP_Post && in_array( $object->post_name, $slugs, true ) ) {
+		return false;
+	}
+	return $url;
+}
+add_filter( 'rank_math/sitemap/entry', 'highend_rank_math_sitemap_entry', 10, 3 );
